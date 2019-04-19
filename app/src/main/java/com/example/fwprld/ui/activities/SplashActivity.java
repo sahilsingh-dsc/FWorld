@@ -1,14 +1,15 @@
-package com.example.fwprld;
+package com.example.fwprld.ui.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.example.fwprld.R;
 
 public class SplashActivity extends AppCompatActivity {
     ImageView bounceImage;

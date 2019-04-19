@@ -1,8 +1,7 @@
-package com.example.fwprld;
+package com.example.fwprld.ui.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +15,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 
+import com.example.fwprld.R;
+import com.example.fwprld.adapters.MyCustomPager;
+import com.example.fwprld.adapters.RecommendAdapter;
+import com.example.fwprld.models.Recommend;
+import com.example.fwprld.ui.activities.LoginActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout profile;
     RecyclerView recyclerView;
     List<Recommend> recommendList;
+    private MyCustomPager adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
         });
         adapterViewFlipper=(AdapterViewFlipper) findViewById(R.id.viewpager);
-        MyCustomPager adapter=new MyCustomPager(getApplicationContext(),IMAGES);
+        adapter= new MyCustomPager(getApplicationContext(),IMAGES);
         adapterViewFlipper.setAdapter(adapter);
         adapterViewFlipper.setAutoStart(true);
         recyclerView=(RecyclerView)findViewById(R.id.recycleView);
@@ -66,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.homepage3));
 
         //creating recyclerview adapter
-       RecommendAdapter adapter1 = new RecommendAdapter(this, recommendList);
+        RecommendAdapter adapter1 = new RecommendAdapter(this, recommendList);
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter1);
     }
-    class MyCustomPager extends BaseAdapter {
+   /* class MyCustomPager extends BaseAdapter {
         Context otx;
         int [] images;
         LayoutInflater layoutInflater;
@@ -84,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         }
         @Override
         public int getCount() {
-
             return images.length;
 
         }
@@ -110,5 +115,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
+    }*/
 }

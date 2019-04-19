@@ -1,4 +1,4 @@
-package com.example.fwprld;
+package com.example.fwprld.models;
 
 public class Recommend   {
     private int id;

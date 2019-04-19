@@ -1,7 +1,9 @@
-package com.example.fwprld;
+package com.example.fwprld.ui.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.fwprld.R;
 
 public class LoginActivity extends AppCompatActivity {
 

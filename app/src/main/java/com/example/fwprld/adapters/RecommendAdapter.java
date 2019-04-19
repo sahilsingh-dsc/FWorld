@@ -1,4 +1,4 @@
-package com.example.fwprld;
+package com.example.fwprld.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.fwprld.R;
+import com.example.fwprld.models.Recommend;
 
 import java.util.List;
 

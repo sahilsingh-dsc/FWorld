@@ -1,10 +1,12 @@
-package com.example.fwprld;
+package com.example.fwprld.ui.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.fwprld.R;
 
 public class ChooseLanguageActivity extends AppCompatActivity {
 
