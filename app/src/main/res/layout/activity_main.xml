@@ -6,174 +6,24 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     tools:context=".ui.activities.MainActivity">
-
-
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:orientation="vertical"
-       android:layout_above="@+id/bottomly">
-       <SearchView
-           android:id="@+id/search"
-           android:layout_width="match_parent"
-           android:layout_height="40dp"
-           android:queryHint="Search by artist,songs,stagenames"
-           android:background="@color/light_gray"
-           android:layout_margin="10dp"
-           android:iconifiedByDefault="false">
-
-       </SearchView>
-       <View
-           android:id="@+id/viewName"
-           android:layout_width="match_parent"
-           android:layout_height="0.8dp"
-           android:background="@color/shadow" />
-
-
-    <AdapterViewFlipper
+    <FrameLayout
+        android:id="@+id/frame"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginTop="5dp"
-        android:id="@+id/viewpager"
-        android:flipInterval="2000">
-    </AdapterViewFlipper>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomly"
+        android:layout_marginBottom="10dp">
 
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="10dp"
-           android:weightSum="3">
-           <android.support.v7.widget.CardView
-               android:layout_width="0dp"
-               android:layout_height="80dp"
-               app:cardCornerRadius="20dp"
-               android:layout_margin="10dp"
-               android:layout_weight="1">
-               <RelativeLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:background="#000">
-                   <ImageView
-                       android:layout_width="match_parent"
-                       android:layout_height="match_parent"
-                       android:src="@drawable/homepage1"
-                       android:alpha="0.4"
-                       android:scaleType="centerCrop"/>
-                   <LinearLayout
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_centerInParent="true">
-                       <ImageView
-                           android:layout_width="25dp"
-                           android:layout_height="25dp"
-                           android:src="@drawable/microphone"/>
 
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:layout_height="match_parent"
-                           android:layout_marginLeft="2dp"
-                           android:text="F-Live"
-                           android:textColor="#fff" />
-                   </LinearLayout>
 
-               </RelativeLayout>
-           </android.support.v7.widget.CardView>
+    </FrameLayout>
 
-           <android.support.v7.widget.CardView
-               android:layout_width="0dp"
-               android:layout_height="80dp"
-               app:cardCornerRadius="10dp"
-               android:layout_margin="10dp"
-               android:layout_weight="1">
-           <RelativeLayout
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:background="#000">
-               <ImageView
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:src="@drawable/homepage2"
-                   android:alpha="0.4"
-                   android:scaleType="centerCrop"/>
-               <LinearLayout
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_centerInParent="true">
-                   <ImageView
-                       android:layout_width="25dp"
-                       android:layout_height="25dp"
-                       android:src="@drawable/mic"/>
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_marginLeft="2dp"
-                       android:textColor="#fff"
-                       android:text="F-Talents"/>
-               </LinearLayout>
-           </RelativeLayout>
-           </android.support.v7.widget.CardView>
 
-           <android.support.v7.widget.CardView
-               android:layout_width="0dp"
-               android:layout_height="80dp"
-               app:cardCornerRadius="10dp"
-               android:layout_margin="10dp"
-               android:layout_weight="1">
-           <RelativeLayout
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:background="#000">
-               <ImageView
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:src="@drawable/homepage3"
-                   android:alpha="0.4"
-                   android:scaleType="centerCrop"/>
-               <LinearLayout
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_centerInParent="true">
-                   <ImageView
-                       android:layout_width="25dp"
-                       android:layout_height="25dp"
-                       android:src="@drawable/karaoke"/>
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_marginLeft="2dp"
-                       android:textColor="#fff"
-                       android:text="F-Club"/>
-               </LinearLayout>
-
-           </RelativeLayout>
-           </android.support.v7.widget.CardView>
-       </LinearLayout>
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Recommended"
-           android:textColor="@color/goldcolor"
-           android:layout_gravity="center"/>
-       <View
-           android:layout_width="80dp"
-           android:layout_height="0.8dp"
-           android:layout_gravity="center"
-           android:background="@color/goldcolor" />
-
-       <View
-           android:layout_width="match_parent"
-           android:layout_height="0.8dp"
-           android:background="@color/shadow" />
-       <android.support.v7.widget.RecyclerView
-           android:id="@+id/recycleView"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="10dp">
-
-       </android.support.v7.widget.RecyclerView>
-
-   </LinearLayout>
-
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_above="@+id/bottomly"
+        android:background="?android:attr/listDivider" />
 
    <LinearLayout
        android:id="@+id/bottomly"

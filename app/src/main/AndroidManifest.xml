@@ -11,11 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.activities.EditProfileActivity"></activity>
+        <activity android:name=".ui.activities.CustomerServiceCenterActivity" />
+        <activity android:name=".ui.activities.GeneralActivity" />
+        <activity android:name=".ui.activities.AccountActivity" />
+        <activity android:name=".ui.activities.SettingActivity" />
         <activity
             android:name=".ui.activities.ChooseLanguageActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activities.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activities.MainActivity"
@@ -26,6 +28,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
