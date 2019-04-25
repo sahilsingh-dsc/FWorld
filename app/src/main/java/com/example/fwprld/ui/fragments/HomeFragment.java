@@ -2,7 +2,11 @@ package com.example.fwprld.ui.fragments;
 
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -27,6 +31,8 @@ public class HomeFragment extends Fragment {
 
     private AdapterViewFlipper adapterViewFlipper;
     private static final int[] IMAGES={R.drawable.slideimage,R.drawable.slideimage1,R.drawable.slideimage2,R.drawable.slideimage3};
+    CardView talent;
+    public TabLayout tabLayout;
 
     RecyclerView recyclerView;
     List<Recommend> recommendList;
@@ -47,6 +53,25 @@ public class HomeFragment extends Fragment {
         adapterViewFlipper.setAdapter(adapter);
         adapterViewFlipper.setAutoStart(true);
         recyclerView=(RecyclerView)v.findViewById(R.id.recycleView);
+        tabLayout = (TabLayout)v.findViewById(R.id.tabLayout);
+        tabLayout.addTab(tabLayout.newTab().setText("Recommended"));
+        tabLayout.addTab(tabLayout.newTab().setText("Hot"));
+        tabLayout.addTab(tabLayout.newTab().setText("Treding"));
+        tabLayout.addTab(tabLayout.newTab().setText("New"));
+        talent=(CardView)v.findViewById(R.id.talent);
+        talent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FTalentFragment fTalentFragment=new FTalentFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                assert fragmentManager != null;
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.add(R.id.frame,fTalentFragment);
+                fragmentTransaction.hide(HomeFragment.this);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recommendList = new ArrayList<>();

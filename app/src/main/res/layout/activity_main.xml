@@ -31,7 +31,14 @@
        android:layout_height="wrap_content"
        android:layout_alignParentBottom="true"
        android:weightSum="5">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp">
+
+
        <LinearLayout
+           android:id="@+id/moment"
            android:layout_width="0dp"
            android:layout_height="wrap_content"
            android:layout_weight="1"
@@ -123,5 +130,6 @@
                android:text="Profile"/>
 
        </LinearLayout>
+      </LinearLayout>
    </LinearLayout>
 </RelativeLayout>

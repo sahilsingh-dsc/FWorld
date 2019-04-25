@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.PopularFragment">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="wrap_content">
+
+
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+      <LinearLayout
+          android:id="@+id/ly"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+      <SearchView
+          android:id="@+id/search"
+          android:layout_width="match_parent"
+          android:layout_height="40dp"
+          android:queryHint="Search by artist,songs,stagenames"
+          android:background="@color/light_gray"
+          android:layout_margin="10dp"
+          android:iconifiedByDefault="false">
+
+      </SearchView>
+      <View
+          android:id="@+id/viewName"
+          android:layout_width="match_parent"
+          android:layout_height="0.8dp"
+          android:background="@color/shadow" />
+
+
+      <AdapterViewFlipper
+          android:layout_width="match_parent"
+          android:layout_height="180dp"
+          android:layout_marginTop="5dp"
+          android:id="@+id/viewpager"
+          android:flipInterval="2000">
+      </AdapterViewFlipper>
+
+      </LinearLayout>
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/recycleView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/ly">
+
+      </android.support.v7.widget.RecyclerView>
+  </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+</FrameLayout>

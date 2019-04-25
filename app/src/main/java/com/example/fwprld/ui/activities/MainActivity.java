@@ -14,10 +14,12 @@ import android.widget.TextView;
 
 import com.example.fwprld.R;
 import com.example.fwprld.ui.fragments.HomeFragment;
+import com.example.fwprld.ui.fragments.LoginActivity;
+import com.example.fwprld.ui.fragments.MomentDiscoverFragment;
 import com.example.fwprld.ui.fragments.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout profile;
+    LinearLayout profile,moment;
     int count=0;
     AlertDialog alertDialog;
     FrameLayout frameLayout;
@@ -26,7 +28,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         profile=(LinearLayout)findViewById(R.id.profile);
+        moment=(LinearLayout)findViewById(R.id.moment);
         frameLayout=(FrameLayout)findViewById(R.id.frame);
+        moment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame, new MomentDiscoverFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 alertDialog.dismiss();
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.frame, new ProfileFragment())
+                        .replace(R.id.frame, new LoginActivity())
+                        .addToBackStack(null)
                         .commit();
             }
         });

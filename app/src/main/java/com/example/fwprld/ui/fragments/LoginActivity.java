@@ -2,6 +2,8 @@ package com.example.fwprld.ui.fragments;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +21,14 @@ Button btnnext;
         btnnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              getChildFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.frame, new ProfileFragment())
-                        .commit();
+              ProfileFragment profileFragment=new ProfileFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                assert fragmentManager != null;
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.add(R.id.frame,profileFragment);
+                fragmentTransaction.hide(LoginActivity.this);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
         return v;
