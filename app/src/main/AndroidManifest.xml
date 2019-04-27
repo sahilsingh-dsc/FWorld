@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.EditProfileActivity"></activity>
+        <activity android:name=".ui.activities.PrivacyPolicyActivity"></activity>
+        <activity android:name=".ui.activities.TermServiceActivity" />
+        <activity android:name=".ui.activities.RefundCancellationActivity" />
+        <activity android:name=".ui.activities.ContactUsActivity" />
+        <activity android:name=".ui.activities.ChildAboutActivity" />
+        <activity android:name=".ui.activities.AboutActivity" />
+        <activity android:name=".ui.activities.EditProfileActivity" />
         <activity android:name=".ui.activities.CustomerServiceCenterActivity" />
         <activity android:name=".ui.activities.GeneralActivity" />
         <activity android:name=".ui.activities.AccountActivity" />

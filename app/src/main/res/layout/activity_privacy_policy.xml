@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.PrivacyPolicyActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textSize="16sp"
+                        android:padding="5dp"
+                        android:textColor="#000"
+                        android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+                        android:drawablePadding="20dp"
+                        android:text="FWorld Connecting World Policy"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="?android:attr/listDivider" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:text="FWorld Connecting World Policy"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:textSize="18dp"
+                android:textStyle="normal"
+                android:textColor="@color/dark_gray"
+                android:text="Lorem Ipsum is the Industry Standard dummy text ever since the 1500s when an unknown printer took a gallery of type and  scram,beld to  amke it type spicemen book "
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

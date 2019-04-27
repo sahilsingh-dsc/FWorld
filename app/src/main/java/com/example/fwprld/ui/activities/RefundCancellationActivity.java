@@ -6,19 +6,17 @@ import android.os.Bundle;
 
 import com.example.fwprld.R;
 
-public class CustomerServiceCenterActivity extends AppCompatActivity {
+public class RefundCancellationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_service_center);
+        setContentView(R.layout.activity_refund_cancellation);
     }
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),SettingActivity.class));
+        startActivity(new Intent(getApplicationContext(),AboutActivity.class));
         finish();
         super.onBackPressed();
     }
-
-
 }

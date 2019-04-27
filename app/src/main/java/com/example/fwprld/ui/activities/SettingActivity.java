@@ -11,7 +11,7 @@ import com.example.fwprld.R;
 import org.w3c.dom.Text;
 
 public class SettingActivity extends AppCompatActivity {
-TextView account,generalsetting,service,editprofile;
+TextView account,generalsetting,service,editprofile,about;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,29 +19,41 @@ TextView account,generalsetting,service,editprofile;
         account=(TextView)findViewById(R.id.account);
         generalsetting=(TextView)findViewById(R.id.generalsetting);
         service=(TextView)findViewById(R.id.service);
+        about=(TextView)findViewById(R.id.about);
         editprofile=(TextView)findViewById(R.id.editprofile);
         editprofile.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  startActivity(new Intent(getApplicationContext(),EditProfileActivity.class));
+                 finish();
              }
          });
         account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),AccountActivity.class));
+                finish();
             }
         });
         generalsetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),GeneralActivity.class));
+                finish();
             }
         });
         service.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),CustomerServiceCenterActivity.class));
+                finish();
+            }
+        });
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),AboutActivity.class));
+                finish();
             }
         });
     }

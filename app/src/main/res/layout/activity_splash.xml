@@ -27,7 +27,7 @@
             android:id="@+id/connect"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:src="@drawable/connect"
+            android:src="@drawable/connectpeople"
             android:layout_marginTop="100dp"
             android:layout_marginLeft="100dp"/>
     </RelativeLayout>

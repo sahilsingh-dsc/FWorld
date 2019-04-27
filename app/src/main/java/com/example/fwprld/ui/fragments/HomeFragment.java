@@ -31,7 +31,7 @@ public class HomeFragment extends Fragment {
 
     private AdapterViewFlipper adapterViewFlipper;
     private static final int[] IMAGES={R.drawable.slideimage,R.drawable.slideimage1,R.drawable.slideimage2,R.drawable.slideimage3};
-    CardView talent;
+    CardView talent,club;
     public TabLayout tabLayout;
 
     RecyclerView recyclerView;
@@ -59,6 +59,7 @@ public class HomeFragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setText("Treding"));
         tabLayout.addTab(tabLayout.newTab().setText("New"));
         talent=(CardView)v.findViewById(R.id.talent);
+        club=(CardView)v.findViewById(R.id.club);
         talent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +68,19 @@ public class HomeFragment extends Fragment {
                 assert fragmentManager != null;
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.add(R.id.frame,fTalentFragment);
+                fragmentTransaction.hide(HomeFragment.this);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+        club.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FClubFragment fClubFragment = new FClubFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                assert fragmentManager != null;
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.add(R.id.frame,fClubFragment);
                 fragmentTransaction.hide(HomeFragment.this);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();

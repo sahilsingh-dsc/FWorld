@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.AboutActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    android:padding="5dp"
+                    android:textColor="#000"
+                    android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+                    android:drawablePadding="20dp"
+                    android:text="About"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="?android:attr/listDivider" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/imagebounce"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/grownimggold"/>
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="250dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/logopur"/>
+                <ImageView
+                    android:id="@+id/connect"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/connectpeople"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginLeft="100dp"/>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Version 4.4.5"
+                android:textColor="@color/goldcolor"
+                android:layout_gravity="center"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/listDivider" />
+            <TextView
+                android:id="@+id/aboutus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:text="AboutUs"/>
+            <TextView
+                android:id="@+id/contactus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:layout_marginRight="10dp"
+                android:text="Contact Us"/>
+
+            <TextView
+                android:id="@+id/refund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:layout_marginRight="10dp"
+                android:text="Refund and Cancellation"/>
+
+            <TextView
+                android:id="@+id/terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:layout_marginRight="10dp"
+                android:text="Terms of Service"/>
+
+            <TextView
+                android:id="@+id/privacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Privacy Policy"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
