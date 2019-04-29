@@ -23,7 +23,7 @@ public class ProfileFragment extends Fragment implements TabLayout.OnTabSelected
         View v= inflater.inflate(R.layout.activity_profile, container, false);
         tabLayout = (TabLayout)v.findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Profile"));
-        tabLayout.addTab(tabLayout.newTab().setText("My Stories"));
+        tabLayout.addTab(tabLayout.newTab().setText("MyStories"));
         tabLayout.addTab(tabLayout.newTab().setText("F Artist"));
         tabLayout.addTab(tabLayout.newTab().setText("Duet"));
         imageView=(ImageView)v.findViewById(R.id.setting);
