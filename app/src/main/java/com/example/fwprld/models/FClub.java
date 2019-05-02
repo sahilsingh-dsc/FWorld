@@ -1,43 +1,39 @@
 package com.example.fwprld.models;
 
 public class FClub {
-    private int id;
-    private String UserName;
-    private String UserView;
-    private String UserSing;
-    private String UserGroupe;
-    private int image;
 
-    public FClub(int id, String username,String userview,String userSing,String userGroupe,int image) {
-        this.id = id;
-        this.UserName=username;
-        this.UserView= userview;
-        this.UserSing = userSing;
-        this.UserGroupe = userGroupe;
-        this.image = image;
+    String room_id, room_name, room_song, room_image, room_current_viewers, room_queue;
+
+    public FClub(String room_id, String room_name, String room_song, String room_image, String room_current_viewers, String room_queue) {
+        this.room_id = room_id;
+        this.room_name = room_name;
+        this.room_song = room_song;
+        this.room_image = room_image;
+        this.room_current_viewers = room_current_viewers;
+        this.room_queue = room_queue;
     }
 
-    public int getId() {
-        return id;
+    public String getRoom_id() {
+        return room_id;
     }
 
-    public String getUserName() {
-        return UserName;
+    public String getRoom_name() {
+        return room_name;
     }
 
-    public String getUserView() {
-        return UserView;
+    public String getRoom_song() {
+        return room_song;
     }
 
-    public String getUserSing() {
-        return UserSing;
+    public String getRoom_image() {
+        return room_image;
     }
 
-    public String getUserGroupe() {
-        return UserGroupe;
+    public String getRoom_current_viewers() {
+        return room_current_viewers;
     }
 
-    public int getImage() {
-        return image;
+    public String getRoom_queue() {
+        return room_queue;
     }
 }

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OtpActivitty"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fronttextview_id"
+        android:text="Enter the code that was sent to"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_marginTop="30dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/num_id"
+        android:text="+910123456789"
+        android:textColor="#800080"
+        android:layout_below="@+id/fronttextview_id"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="18dp"
+
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/otprelative_id"
+        android:layout_below="@+id/fronttextview_id"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="50dp">
+        <EditText
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:id="@+id/firstedit_id"
+            android:inputType="number"
+            android:background="@drawable/backgroundtrans"
+            android:layout_marginTop="30dp"
+            android:maxLength="1"
+            android:textAlignment="center"/>
+        <EditText
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:id="@+id/secondedit_id"
+            android:layout_toRightOf="@+id/firstedit_id"
+            android:layout_marginLeft="10sp"
+            android:inputType="number"
+            android:background="@drawable/backgroundtrans"
+            android:layout_marginTop="30dp"
+            android:maxLength="1"
+            android:textAlignment="center"/>
+        <EditText
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:id="@+id/thirdedit_id"
+            android:layout_toRightOf="@+id/secondedit_id"
+            android:layout_marginLeft="10sp"
+            android:inputType="number"
+            android:background="@drawable/backgroundtrans"
+            android:layout_marginTop="30dp"
+            android:maxLength="1"
+            android:textAlignment="center"/>
+        <EditText
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:id="@+id/forthedit_id"
+            android:layout_toRightOf="@+id/thirdedit_id"
+            android:layout_marginLeft="10sp"
+            android:inputType="number"
+            android:background="@drawable/backgroundtrans"
+            android:layout_marginTop="30dp"
+            android:maxLength="1"
+            android:textAlignment="center"/>
+        <EditText
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:id="@+id/fifthedit_id"
+            android:layout_toRightOf="@+id/forthedit_id"
+            android:layout_marginLeft="10sp"
+            android:inputType="number"
+            android:background="@drawable/backgroundtrans"
+            android:layout_marginTop="30dp"
+            android:maxLength="1"
+            android:textAlignment="center"
+            />
+        <EditText
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:id="@+id/sixedit_id"
+            android:layout_toRightOf="@+id/fifthedit_id"
+            android:layout_marginLeft="10sp"
+            android:inputType="number"
+            android:background="@drawable/backgroundtrans"
+            android:layout_marginTop="30dp"
+            android:maxLength="1"
+            android:textAlignment="center"/>
+
+    </RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/continuebutton"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/otprelative_id"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/continuebutton"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="#fff"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/didntcode_id"
+        android:text="I didn't get a code"
+        android:layout_below="@+id/continuebutton"
+        android:textColor="#800080"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, whwn an know printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries,"
+        android:layout_below="@+id/didntcode_id"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:textSize="9dp"
+
+        />
+
+</RelativeLayout>

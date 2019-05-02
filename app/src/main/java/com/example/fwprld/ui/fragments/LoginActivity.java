@@ -21,6 +21,9 @@ Button btnnext;
         btnnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
               ProfileFragment profileFragment=new ProfileFragment();
                 FragmentManager fragmentManager = getFragmentManager();
                 assert fragmentManager != null;

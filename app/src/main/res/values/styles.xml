@@ -16,4 +16,11 @@
         <item name="android:textColor">@color/dark_gray</item>
         <item name="textAllCaps">true</item>
     </style>
+
+    <style name="loading" parent="android:Theme.DeviceDefault.Light.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogSpotColor">@color/purpule</item>
+        <item name="DialogSpotCount">5</item>
+    </style>
+
 </resources>

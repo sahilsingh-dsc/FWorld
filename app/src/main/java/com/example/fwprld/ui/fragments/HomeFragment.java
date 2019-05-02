@@ -2,6 +2,7 @@ package com.example.fwprld.ui.fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -20,46 +21,49 @@ import com.example.fwprld.R;
 import com.example.fwprld.adapters.MyCustomPager;
 import com.example.fwprld.adapters.RecommendAdapter;
 import com.example.fwprld.models.Recommend;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class HomeFragment extends Fragment {
 
     private AdapterViewFlipper adapterViewFlipper;
     private static final int[] IMAGES={R.drawable.slideimage,R.drawable.slideimage1,R.drawable.slideimage2,R.drawable.slideimage3};
     CardView talent,club;
     public TabLayout tabLayout;
-
+    View view;
     RecyclerView recyclerView;
     List<Recommend> recommendList;
     private MyCustomPager adapter;
+    DatabaseReference homeFragRef;
+
     public HomeFragment() {
-        // Required empty public constructor
+
     }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-         View v= inflater.inflate(R.layout.fragment_home, container, false);
-        SearchView searchView=(SearchView)v.findViewById(R.id.search);
-        adapterViewFlipper=(AdapterViewFlipper)v.findViewById(R.id.viewpager);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        view = inflater.inflate(R.layout.fragment_home, container, false);
+        SearchView searchView=(SearchView)view.findViewById(R.id.search);
+        adapterViewFlipper=(AdapterViewFlipper)view.findViewById(R.id.viewpager);
         adapter= new MyCustomPager(getContext(),IMAGES);
         adapterViewFlipper.setAdapter(adapter);
         adapterViewFlipper.setAutoStart(true);
-        recyclerView=(RecyclerView)v.findViewById(R.id.recycleView);
-        tabLayout = (TabLayout)v.findViewById(R.id.tabLayout);
+        recyclerView=(RecyclerView) view.findViewById(R.id.recycleView);
+        tabLayout = (TabLayout)view.findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Recommended"));
         tabLayout.addTab(tabLayout.newTab().setText("Hot"));
         tabLayout.addTab(tabLayout.newTab().setText("Treding"));
         tabLayout.addTab(tabLayout.newTab().setText("New"));
-        talent=(CardView)v.findViewById(R.id.talent);
-        club=(CardView)v.findViewById(R.id.club);
+        talent=(CardView)view.findViewById(R.id.talent);
+        club=(CardView)view.findViewById(R.id.club);
         talent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,32 +93,35 @@ public class HomeFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recommendList = new ArrayList<>();
-        recommendList.add(
-                new Recommend(
-                        1,
-                        "Coca Cola Tu",
-                        "Tony Kakkar",
-                        R.drawable.homepage1));
+        recommendList.clear();
 
-        recommendList.add(
-                new Recommend(
-                        1,
-                        "Sab Tera",
-                        "Tony Kakkar",
-                        R.drawable.homepage2));
-        recommendList.add(
-                new Recommend(
-                        1,
-                        "Agar Tu Hota",
-                        "Ankit Tiwari",
-                        R.drawable.homepage3));
+        homeFragRef = FirebaseDatabase.getInstance().getReference("VIEWTAB_DATA");
+        homeFragRef.child("RECOMMENDED_DATA").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                recommendList.clear();
+                for (DataSnapshot recSnap : dataSnapshot.getChildren()){
 
-        //creating recyclerview adapter
-        RecommendAdapter adapter1 = new RecommendAdapter(getContext(), recommendList);
+                    String recommended_song_id = (String) recSnap.child("recommended_song_id").getValue();
+                    String recommended_song_image = (String) recSnap.child("recommended_song_image").getValue();
+                    String recommended_song_name = (String) recSnap.child("recommended_song_name").getValue();
+                    String recommended_song_singer = (String) recSnap.child("recommended_song_singer").getValue();
 
-        //setting adapter to recyclerview
-        recyclerView.setAdapter(adapter1);
-        return v;
+                    Recommend recommend = new Recommend(recommended_song_id, recommended_song_image ,recommended_song_name ,recommended_song_singer);
+                    recommendList.add(recommend);
+                }
+
+                RecommendAdapter adapter1 = new RecommendAdapter(getContext(), recommendList);
+                recyclerView.setAdapter(adapter1);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        return view;
     }
 
 }

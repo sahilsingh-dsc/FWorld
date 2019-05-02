@@ -26,8 +26,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SplashActivity extends AppCompatActivity {
     ImageView bounceImage,connect;
-    private FirebaseAuth mAuth;
-    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,47 +33,14 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         @SuppressLint("ResourceType") final Animation animBounce = AnimationUtils.loadAnimation(getApplicationContext(), R.animator.boun);
         @SuppressLint("ResourceType") final Animation animBounce1 = AnimationUtils.loadAnimation(getApplicationContext(), R.animator.blink);
-        bounceImage = (ImageView)findViewById(R.id.imagebounce);
-        connect= (ImageView)findViewById(R.id.connect);
+        bounceImage = (ImageView) findViewById(R.id.imagebounce);
+        connect = (ImageView) findViewById(R.id.connect);
         connect.startAnimation(animBounce1);
         bounceImage.startAnimation(animBounce);
-        mAuth = FirebaseAuth.getInstance();
-        mAuth.signInAnonymously()
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            assert user != null;
-                            String authid = user.getUid();
-                            DatabaseReference langRef = FirebaseDatabase.getInstance().getReference();
-                            langRef.child("USER_DATA").child(authid).child("selected_language").addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()){
-                                        Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
-                                        startActivity(mainIntent);
-                                        finish();
-                                    }else {
-                                        Intent mainIntent = new Intent(SplashActivity.this, ChooseLanguageActivity.class);
-                                        startActivity(mainIntent);
-                                        finish();
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                }
-                            });
-
-                        } else {
-
-                        }
-
-
-                    }
-                });
+        Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+        startActivity(mainIntent);
+        finish();
 
     }
 }

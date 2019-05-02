@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.fwprld.R;
 import com.example.fwprld.models.Recommend;
 
@@ -30,7 +31,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
 
     @Override
     public RecommendViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //inflating and returning our view holder
+
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.recommend_list, null);
         return new RecommendViewHolder(view);
@@ -38,14 +39,11 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
 
     @Override
     public void onBindViewHolder(RecommendViewHolder holder, int position) {
-        //getting the product of the specified position
+
         Recommend recommend = recommendList.get(position);
-
-        //binding the data with the viewholder views
-        holder.textViewTitle.setText(recommend.getTitle());
-        holder.textViewSingerName.setText(recommend.getSingerName());
-
-        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(recommend.getImage()));
+        holder.textViewTitle.setText(recommend.getRecommended_song_name());
+        holder.textViewSingerName.setText(recommend.getRecommended_song_singer());
+        Glide.with(mCtx).load(recommend.getRecommended_song_image()).into(holder.imageView);
 
     }
 
