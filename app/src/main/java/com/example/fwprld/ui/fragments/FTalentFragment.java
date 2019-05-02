@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 import com.example.fwprld.R;
 import com.example.fwprld.adapters.FTalentAdapter;
@@ -34,6 +35,8 @@ public class FTalentFragment extends Fragment {
     RecyclerView recyclerView;
     List<FTalent> ftalentList;
     View view;
+    String ftal_user, song_id, song_image, song_name, song_plays, song_singer, song_playtime, singer_name, singer_image;
+
     public FTalentFragment(){
 
     }
@@ -54,30 +57,33 @@ public class FTalentFragment extends Fragment {
                 ftalentList.clear();
                 for (DataSnapshot ftalSnap : dataSnapshot.getChildren()){
 
-                    String ftal_user = (String) ftalSnap.child("user_id").getValue();
-                    String song_id = (String) ftalSnap.child("SONG_DETAILS").child("song_id").getValue();
-                    String song_image = (String) ftalSnap.child("SONG_DETAILS").child("song_image").getValue();
-                    String song_name = (String) ftalSnap.child("SONG_DETAILS").child("song_name").getValue();
-                    String song_plays = (String) ftalSnap.child("SONG_DETAILS").child("song_plays").getValue();
-                    String song_singer = (String) ftalSnap.child("SONG_DETAILS").child("song_singer").getValue();
-                    String song_playtime = (String) ftalSnap.child("SONG_DETAILS").child("song_playtime").getValue();
+                    ftal_user = (String) ftalSnap.child("user_id").getValue();
+                    song_id = (String) ftalSnap.child("SONG_DETAILS").child("song_id").getValue();
+                    song_image = (String) ftalSnap.child("SONG_DETAILS").child("song_image").getValue();
+                    song_name = (String) ftalSnap.child("SONG_DETAILS").child("song_name").getValue();
+                    song_plays = (String) ftalSnap.child("SONG_DETAILS").child("song_plays").getValue();
+                    song_singer = (String) ftalSnap.child("SONG_DETAILS").child("song_singer").getValue();
+                    song_playtime = (String) ftalSnap.child("SONG_DETAILS").child("song_playtime").getValue();
 
                     DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("USER_DATA");
-                    assert ftal_user != null;
                     userRef.child("USER_PROFILE").child(ftal_user).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                         //   String user_name
+
+                            singer_name = (String) dataSnapshot.child("user_name").getValue();
+                            singer_image = (String) dataSnapshot.child("user_image").getValue();
+
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                            Toast.makeText(getContext(), "Database Error", Toast.LENGTH_SHORT).show();
                         }
+
                     });
 
-                    FTalent fTalent = new FTalent(ftal_user, song_id ,song_image ,song_name ,song_plays ,song_singer, song_playtime);
-
+                    Toast.makeText(getContext(), ""+singer_name, Toast.LENGTH_SHORT).show();
+                    FTalent fTalent = new FTalent(ftal_user, song_id ,song_image ,song_name ,song_plays ,song_singer, song_playtime, singer_name ,singer_image);
                     ftalentList.add(fTalent);
 
                 }

@@ -9,8 +9,10 @@ public class FTalent  {
     private String song_plays;
     private String song_singer;
     private String song_playtime;
+    private String singer_name;
+    private String singer_image;
 
-    public FTalent(String ftal_user, String song_id, String song_image, String song_name, String song_plays, String song_singer, String song_playtime) {
+    public FTalent(String ftal_user, String song_id, String song_image, String song_name, String song_plays, String song_singer, String song_playtime, String singer_name, String singer_image) {
         this.ftal_user = ftal_user;
         this.song_id = song_id;
         this.song_image = song_image;
@@ -18,6 +20,8 @@ public class FTalent  {
         this.song_plays = song_plays;
         this.song_singer = song_singer;
         this.song_playtime = song_playtime;
+        this.singer_name = singer_name;
+        this.singer_image = singer_image;
     }
 
     public String getFtal_user() {
@@ -74,5 +78,21 @@ public class FTalent  {
 
     public void setSong_playtime(String song_playtime) {
         this.song_playtime = song_playtime;
+    }
+
+    public String getSinger_name() {
+        return singer_name;
+    }
+
+    public void setSinger_name(String singer_name) {
+        this.singer_name = singer_name;
+    }
+
+    public String getSinger_image() {
+        return singer_image;
+    }
+
+    public void setSinger_image(String singer_image) {
+        this.singer_image = singer_image;
     }
 }

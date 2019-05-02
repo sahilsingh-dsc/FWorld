@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.fwprld.R;
 import com.example.fwprld.models.FTalent;
 import com.example.fwprld.models.Recommend;
@@ -43,10 +44,15 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
 
         FTalent fTalent = fTalentList.get(position);
 
-        holder.textViewUserName.setText(fTalent.getUserName());
+        holder.textViewUserName.setText(fTalent.getSinger_name());
         holder.textViewSongName.setText(fTalent.getSong_name());
         holder.textViewPlayTime.setText(fTalent.getSong_playtime());
-        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(fTalent.getImage()));
+        holder.txtSongPlaysCount.setText(fTalent.getSong_plays());
+//        Toast.makeText(mCtx, ""+fTalent.getSinger_image(), Toast.LENGTH_SHORT).show();
+//        Glide.with(mCtx).load(fTalent.getSinger_image()).into(holder.imageView);
+//        Glide.with(mCtx).load(fTalent.getSinger_image()).into(holder.imageViewuser);
+      //  Toast.makeText(mCtx, ""+fTalent.getSinger_name(), Toast.LENGTH_SHORT).show();
+
         holder.textViewCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,16 +71,18 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
 
     class FTalentViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewUserName,textViewSongName, textViewPlayTime,textViewCreate;
-        ImageView imageView;
+        TextView textViewUserName,textViewSongName, textViewPlayTime,textViewCreate, txtSongPlaysCount;
+        ImageView imageView, imageViewuser;
 
         public FTalentViewHolder(View itemView) {
             super(itemView);
             textViewUserName = itemView.findViewById(R.id.textViewUserName);
             textViewSongName = itemView.findViewById(R.id.textViewSongName);
-            textViewPlayTime = itemView.findViewById(R.id.textViewPlayTime);
+            textViewPlayTime = itemView.findViewById(R.id.txtSongPlayTime);
+            txtSongPlaysCount = itemView.findViewById(R.id.txtSongPlaysCount);
             textViewCreate = itemView.findViewById(R.id.btncreate);
             imageView = itemView.findViewById(R.id.imageView);
+            imageViewuser = itemView.findViewById(R.id.imageViewuser);
         }
     }
     private void Category() {

@@ -41,28 +41,28 @@ public class FollowingFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         ftalentList = new ArrayList<>();
-        ftalentList.add(
-                new FTalent(
-                        1,
-                        "Shubham",
-                        "Coca Cola Tu",
-                        "1:40 4k plays",
-                        R.drawable.backimgpro));
-
-        ftalentList.add(
-                new FTalent(
-                        2,
-                        "Varsha",
-                        "Sab Tera",
-                        "2:12 8k plays",
-                        R.drawable.backimgpro));
-        ftalentList.add(
-                new FTalent(
-                        3,
-                        "Dharmendra",
-                        "Tu Mera Dost Hai",
-                        "1:25 6k plays",
-                        R.drawable.backimgpro));
+//        ftalentList.add(
+//                new FTalent(
+//                        1,
+//                        "Shubham",
+//                        "Coca Cola Tu",
+//                        "1:40 4k plays",
+//                        R.drawable.backimgpro));
+//
+//        ftalentList.add(
+//                new FTalent(
+//                        2,
+//                        "Varsha",
+//                        "Sab Tera",
+//                        "2:12 8k plays",
+//                        R.drawable.backimgpro));
+//        ftalentList.add(
+//                new FTalent(
+//                        3,
+//                        "Dharmendra",
+//                        "Tu Mera Dost Hai",
+//                        "1:25 6k plays",
+//                        R.drawable.backimgpro));
 
         //creating recyclerview adapter
         FTalentAdapter adapter = new FTalentAdapter(getContext(),  ftalentList);
