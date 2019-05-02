@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="560.00dp"
+        android:layout_marginTop="580.00dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -56,12 +56,14 @@
         </LinearLayout>
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-
-
-
-            >
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/removebutton"
+                android:text="REMOVE FROOM"
+                />
 
 
 
