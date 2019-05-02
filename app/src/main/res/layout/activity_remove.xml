@@ -2,17 +2,19 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="580.00dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600.00dp"
+        android:layout_marginBottom="2dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -22,6 +24,12 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
                 android:textSize="17dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_close_purple_24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="250dp" />
 
         </LinearLayout>
 
@@ -39,30 +47,34 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/backimgpro"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="7dp"/>
+                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ROHIT SINGH"
                 android:textColor="#000"
-                android:layout_marginTop="35.00dp"
+                android:layout_marginTop="30.00dp"
                 android:layout_marginLeft="20.00dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Queue:20"
-                android:layout_marginTop="35.00dp"
+                android:text="Queue:10"
+                android:layout_marginTop="30.00dp"
                 android:layout_marginLeft="120.00dp"/>
         </LinearLayout>
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/removebutton"
-                android:text="REMOVE FROOM"
+                android:text="REMOVE FROOM QUEUE"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:textColor="#fff"
+
                 />
 
 
