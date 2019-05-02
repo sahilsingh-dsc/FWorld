@@ -50,7 +50,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Queue:10"
+                android:text="Queue:20"
                 android:layout_marginTop="35.00dp"
                 android:layout_marginLeft="120.00dp"/>
         </LinearLayout>
