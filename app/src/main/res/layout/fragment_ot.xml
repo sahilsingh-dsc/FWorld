@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OtpActivitty"
+    tools:context=".ui.fragments.OTPFragment"
     android:orientation="vertical">
 
     <TextView
@@ -40,7 +40,8 @@
         android:layout_below="@+id/fronttextview_id"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:gravity="center">
         <EditText
             android:layout_width="35sp"
             android:layout_height="35sp"
