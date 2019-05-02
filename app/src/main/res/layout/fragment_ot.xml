@@ -50,7 +50,7 @@
             android:background="@drawable/backgroundtrans"
             android:layout_marginTop="30dp"
             android:maxLength="1"
-            android:textAlignment="center"/>
+           android:textAlignment="center"/>
         <EditText
             android:layout_width="35sp"
             android:layout_height="35sp"
