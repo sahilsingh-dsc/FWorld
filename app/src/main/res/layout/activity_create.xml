@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -37,24 +37,16 @@
             </SearchView>
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="60dp">
 
             <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="30dp"
+                app:tabMode="fixed"
+                app:tabGravity="fill"
+                android:layout_marginTop="70dp"/>
 
 
-
-
-
-
-            </android.support.design.widget.TabLayout>
-
-        </RelativeLayout>
 
     </RelativeLayout>
     <RelativeLayout
@@ -68,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/Creatsong_id"
-            android:text="Creat your own song"
+            android:text="Create your own song"
             android:layout_centerHorizontal="true"
             android:textSize="15dp"/>
         <TextView
@@ -82,7 +74,7 @@
             android:background="@drawable/roundpurple"
             android:layout_centerHorizontal="true"
             android:textColor="@color/purpule"
-            android:text="CREAT"
+            android:text="CREATE"
             android:layout_marginTop="30dp"/>
     </RelativeLayout>
 

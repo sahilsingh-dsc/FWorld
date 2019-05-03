@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     tools:context=".ui.activities.MainActivity">
+
     <FrameLayout
         android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottomly"
-        android:layout_marginBottom="10dp">
-
+        android:layout_alignBottom="@+id/bottomly"
+        android:layout_marginBottom="65dp">
 
 
     </FrameLayout>
@@ -87,7 +87,7 @@
                android:layout_width="50dp"
                android:layout_height="50dp"
                android:background="@drawable/gradient"
-               android:src="@drawable/ic_microphone"
+               android:src="@drawable/microphone"
                android:scaleType="centerCrop"/>
 
        </LinearLayout>
