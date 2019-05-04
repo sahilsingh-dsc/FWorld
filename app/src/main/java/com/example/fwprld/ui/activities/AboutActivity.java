@@ -14,6 +14,7 @@ TextView about,contact,refund,terms,privacy;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+
         about =(TextView)findViewById(R.id.aboutus);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
