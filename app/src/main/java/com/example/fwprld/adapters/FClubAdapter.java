@@ -68,7 +68,7 @@ public class FClubAdapter extends RecyclerView.Adapter<FClubAdapter.FClubViewHol
             textViewUserView = itemView.findViewById(R.id.userview);
             textViewSing = itemView.findViewById(R.id.usersing);
             textViewGroupeName = itemView.findViewById(R.id.groupename);
-            imageView = itemView.findViewById(R.id.imageView);
+            imageView = itemView.findViewById(R.id.imgProfileAvatar);
         }
     }
 

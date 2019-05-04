@@ -63,7 +63,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewSingerName = itemView.findViewById(R.id.textViewSingerName);
-            imageView = itemView.findViewById(R.id.imageView);
+            imageView = itemView.findViewById(R.id.imgProfileAvatar);
         }
     }
 }

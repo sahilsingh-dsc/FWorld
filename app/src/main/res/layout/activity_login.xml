@@ -39,12 +39,13 @@
                 app:ccp_showNameCode="false" />
 
             <EditText
+                android:id="@+id/etxtUserMobile"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.6"
+                android:background="@color/light_gray"
                 android:hint="Enter Mobile Number"
-                android:padding="10dp"
-                android:background="@color/light_gray"/>
+                android:padding="10dp" />
         </LinearLayout>
 
 <TextView
@@ -57,7 +58,7 @@
     android:gravity="center"/>
 
 <Button
-    android:id="@+id/btnnext"
+    android:id="@+id/btnNextToOTP"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Next"

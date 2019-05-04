@@ -81,7 +81,7 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
             textViewPlayTime = itemView.findViewById(R.id.txtSongPlayTime);
             txtSongPlaysCount = itemView.findViewById(R.id.txtSongPlaysCount);
             textViewCreate = itemView.findViewById(R.id.btncreate);
-            imageView = itemView.findViewById(R.id.imageView);
+            imageView = itemView.findViewById(R.id.imgProfileAvatar);
             imageViewuser = itemView.findViewById(R.id.imageViewuser);
         }
     }

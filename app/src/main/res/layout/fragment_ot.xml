@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OtpActivitty"
+    tools:context="ui.fragments.OTPFragment"
     android:orientation="vertical">
 
     <TextView
@@ -40,11 +40,12 @@
         android:layout_below="@+id/fronttextview_id"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="30dp"
+        android:gravity="center"
         android:layout_marginTop="50dp">
         <EditText
             android:layout_width="35sp"
             android:layout_height="35sp"
-            android:id="@+id/firstedit_id"
+            android:id="@+id/code_one"
             android:inputType="number"
             android:background="@drawable/backgroundtrans"
             android:layout_marginTop="30dp"
@@ -53,8 +54,8 @@
         <EditText
             android:layout_width="35sp"
             android:layout_height="35sp"
-            android:id="@+id/secondedit_id"
-            android:layout_toRightOf="@+id/firstedit_id"
+            android:id="@+id/code_two"
+            android:layout_toRightOf="@+id/code_one"
             android:layout_marginLeft="10sp"
             android:inputType="number"
             android:background="@drawable/backgroundtrans"
@@ -64,8 +65,8 @@
         <EditText
             android:layout_width="35sp"
             android:layout_height="35sp"
-            android:id="@+id/thirdedit_id"
-            android:layout_toRightOf="@+id/secondedit_id"
+            android:id="@+id/code_three"
+            android:layout_toRightOf="@+id/code_two"
             android:layout_marginLeft="10sp"
             android:inputType="number"
             android:background="@drawable/backgroundtrans"
@@ -75,8 +76,8 @@
         <EditText
             android:layout_width="35sp"
             android:layout_height="35sp"
-            android:id="@+id/forthedit_id"
-            android:layout_toRightOf="@+id/thirdedit_id"
+            android:id="@+id/code_four"
+            android:layout_toRightOf="@+id/code_three"
             android:layout_marginLeft="10sp"
             android:inputType="number"
             android:background="@drawable/backgroundtrans"
@@ -86,8 +87,8 @@
         <EditText
             android:layout_width="35sp"
             android:layout_height="35sp"
-            android:id="@+id/fifthedit_id"
-            android:layout_toRightOf="@+id/forthedit_id"
+            android:id="@+id/code_five"
+            android:layout_toRightOf="@+id/code_four"
             android:layout_marginLeft="10sp"
             android:inputType="number"
             android:background="@drawable/backgroundtrans"
@@ -98,8 +99,8 @@
         <EditText
             android:layout_width="35sp"
             android:layout_height="35sp"
-            android:id="@+id/sixedit_id"
-            android:layout_toRightOf="@+id/fifthedit_id"
+            android:id="@+id/code_six"
+            android:layout_toRightOf="@+id/code_five"
             android:layout_marginLeft="10sp"
             android:inputType="number"
             android:background="@drawable/backgroundtrans"

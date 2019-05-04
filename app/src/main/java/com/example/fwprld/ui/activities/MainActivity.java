@@ -17,16 +17,22 @@ import com.example.fwprld.ui.fragments.HomeFragment;
 import com.example.fwprld.ui.fragments.LoginActivity;
 import com.example.fwprld.ui.fragments.MomentDiscoverFragment;
 import com.example.fwprld.ui.fragments.ProfileFragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout profile,moment;
     int count=0;
     AlertDialog alertDialog;
     FrameLayout frameLayout;
+    FirebaseUser firebaseUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
         profile=(LinearLayout)findViewById(R.id.profile);
         moment=(LinearLayout)findViewById(R.id.moment);
         frameLayout=(FrameLayout)findViewById(R.id.frame);
@@ -44,7 +50,17 @@ public class MainActivity extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Show();
+                if (firebaseUser != null){
+
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.frame, new ProfileFragment())
+                            .addToBackStack(null)
+                            .commit();
+
+                }else {
+                    Show();
+                }
 
             }
         });
