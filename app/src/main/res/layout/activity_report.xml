@@ -107,21 +107,23 @@
                 android:layout_toRightOf="@+id/receviedrelative_id"
                 android:layout_below="@+id/namegroup_id"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="25dp">
 
-                >
 
                 <ImageView
                     android:layout_width="110dp"
                     android:layout_height="48dp"
+                    android:id="@+id/reportbtn_id"
                     android:background="@drawable/reportbutton"/>
+
                 <ImageView
+                    android:id="@+id/rent_id"
                     android:layout_width="35dp"
                     android:layout_height="30dp"
-                    android:id="@+id/rent_id"
-                    app:srcCompat="@drawable/ic_surprise"
+                    android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/ic_surprise" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -144,11 +146,93 @@
 
             </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/followersrelative_id"
+                android:layout_below="@+id/sentrelative_id">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/numberfirsttext_id"
+                    android:text="250"
+                    android:textColor="#000"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/follower_id"
+                    android:layout_below="@+id/numberfirsttext_id"
+                    android:text="Followers"
+                    android:textColor="#000"
+                    android:layout_marginLeft="40dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/followrelative_id"
+                android:layout_toRightOf="@+id/followersrelative_id"
+                android:layout_below="@+id/sentrelative_id">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/numbersecondtext_id"
+                    android:text="105"
+                    android:textColor="#000"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/follow_id"
+                    android:layout_below="@+id/numbersecondtext_id"
+                    android:text="Follow"
+                    android:textColor="#000"
+                    android:layout_marginLeft="40dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/postrelative_id"
+                android:layout_toRightOf="@+id/followrelative_id"
+                android:layout_below="@+id/sentrelative_id">
 
-
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/numberthirdtext_id"
+                    android:text="12"
+                    android:textColor="#000"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/post_id"
+                    android:layout_below="@+id/numberthirdtext_id"
+                    android:text="Post"
+                    android:textColor="#000"
+                    android:layout_marginLeft="40dp"
+                    />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:id="@+id/followtext_id"
+                android:layout_below="@+id/followrelative_id"
+                android:text="Follow"
+                android:background="@drawable/reportfollowbtn"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:textColor="#fff"
+                android:textAlignment="center"
+                android:layout_marginTop="25dp"
+                />
 
         </RelativeLayout>
 

@@ -26,14 +26,17 @@
         <activity android:name=".ui.activities.GeneralActivity" />
         <activity android:name=".ui.activities.AccountActivity" />
         <activity android:name=".ui.activities.SettingActivity" />
+
         <activity
             android:name=".ui.activities.ChooseLanguageActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activities.MainActivity"
             android:screenOrientation="portrait" />
+
+
         <activity
-            android:name=".ui.activities.SplashActivity"
+            android:name=".ui.activities.CreateFreeStyleActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

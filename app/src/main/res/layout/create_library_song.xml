@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/libraryrelative_id">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="6sp"
+                android:padding="5dp"
+                android:textColor="#000"
+                android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:queryHint="Search by artist,songs,stagenames"
+                android:background="@color/light_gray"
+                android:layout_margin="10dp"
+                android:iconifiedByDefault="false">
+            </SearchView>
+        </LinearLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            android:layout_marginTop="60dp"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/cocarelative_id"
+        android:layout_below="@+id/libraryrelative_id"
+        android:layout_marginTop="20dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/userimagecard_id"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            app:cardCornerRadius="3dp"
+            app:cardPreventCornerOverlap="false">
+            <ImageView
+                android:id="@+id/imgThumb1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/homepage2"
+                android:scaleType="centerCrop"
+                android:layout_margin="10dp"/>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/coca_id"
+            android:layout_toRightOf="@+id/userimagecard_id"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Coca Cola Tu"
+            android:textColor="#000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/songartist_id"
+            android:layout_toRightOf="@+id/userimagecard_id"
+            android:layout_below="@+id/coca_id"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="1dp"
+            android:text="Tony Kakkar"
+            />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:id="@+id/fworldlogoimg_id"
+            android:src="@drawable/fworld_logo"
+            android:layout_below="@+id/songartist_id"
+            android:layout_toRightOf="@+id/userimagecard_id"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logotext_id"
+            android:layout_toRightOf="@+id/fworldlogoimg_id"
+            android:layout_below="@+id/songartist_id"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="4dp"
+            android:text="F World"
+            />
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:id="@+id/creattext_id"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:background="@drawable/roundpurple"
+            android:textColor="@color/purpule"
+            android:layout_toRightOf="@+id/coca_id"
+            android:text="CREATE"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="100dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cocarelative_id">
+        <View
+            android:id="@+id/divider000"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="?android:attr/listDivider" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
