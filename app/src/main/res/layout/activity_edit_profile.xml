@@ -77,7 +77,7 @@
 
             </LinearLayout>
 
-            <TextView
+            <EditText
                 android:id="@+id/txtProfileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -85,9 +85,10 @@
                 android:layout_marginTop="10dp"
                 android:drawableLeft="@drawable/ic_identification"
                 android:drawablePadding="20dp"
-                android:gravity="center"
                 android:padding="10dp"
-                android:text="Name"
+                android:textSize="12sp"
+                android:background="@drawable/transparent_background_nogravity"
+                android:hint="Name"
                 android:textColor="#000" />
 
             <TextView
@@ -100,6 +101,7 @@
                 android:drawablePadding="20dp"
                 android:gravity="center"
                 android:padding="10dp"
+                android:textSize="12sp"
                 android:text="1452562856"
                 android:textColor="#000" />
 
@@ -113,6 +115,8 @@
                 android:drawablePadding="20dp"
                 android:gravity="center"
                 android:padding="10dp"
+                android:textColor="#000"
+                android:textSize="12sp"
                 android:text="Choose your gender" />
 
             <TextView
@@ -125,6 +129,8 @@
                 android:drawablePadding="20dp"
                 android:gravity="center"
                 android:padding="10dp"
+                android:textColor="#000"
+                android:textSize="12sp"
                 android:text="Fill in your birthday" />
 
             <TextView
@@ -137,9 +143,11 @@
                 android:drawablePadding="20dp"
                 android:gravity="center"
                 android:padding="10dp"
+                android:textSize="12sp"
+                android:textColor="#000"
                 android:text="Choose your relationship status" />
 
-            <TextView
+            <EditText
                 android:id="@+id/txtEditProfileHomeTown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -147,9 +155,11 @@
                 android:layout_marginTop="5dp"
                 android:drawableLeft="@drawable/ic_house"
                 android:drawablePadding="20dp"
-                android:gravity="center"
+                android:textSize="12sp"
+                android:background="@drawable/transparent_background_nogravity"
                 android:padding="10dp"
-                android:text="Fill in your hometown,find more friends" />
+                android:textColor="#000"
+                android:hint="Fill in your hometown,find more friends"/>
 
             <View
                 android:id="@+id/divider11"
@@ -158,17 +168,19 @@
                 android:layout_height="10dp"
                 android:background="?android:attr/listDivider" />
 
-            <TextView
+            <EditText
+                android:id="@+id/etxtProfileStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/transparent_background_nogravity"
                 android:drawableLeft="@drawable/ic_text_document"
                 android:drawablePadding="20dp"
+                android:hint="Welcome to my stage"
                 android:padding="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
                 android:textColor="#000"
-                android:text="Welcome to my stage"/>
+                android:textSize="12sp" />
             <View
                 android:id="@+id/divider1"
                 android:layout_width="match_parent"
@@ -186,7 +198,14 @@
                 android:drawablePadding="20dp"
                 android:gravity="center"
                 android:padding="10dp"
+                android:textSize="12sp"
                 android:text="Education" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerEdu"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
             <TextView
                 android:id="@+id/txtEditProfileAddEdu"
@@ -215,8 +234,14 @@
                 android:drawableLeft="@drawable/ic_school_bag"
                 android:drawablePadding="20dp"
                 android:gravity="center"
+                android:textSize="12sp"
                 android:padding="10dp"
                 android:text="Career" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerCareer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
             <TextView
                 android:id="@+id/txtEditProfileAddCareer"

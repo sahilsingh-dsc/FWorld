@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fwprld.R;
@@ -24,6 +25,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +36,7 @@ public class FClubFragment extends Fragment {
     RecyclerView recyclerView;
     List<FClub> fClubList;
     DatabaseReference fclubRef;
+
     private AlertDialog loadingDialog;
 
     public FClubFragment() {
@@ -56,6 +60,8 @@ public class FClubFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
         fClubList = new ArrayList<>();
         fClubList.clear();
+
+
 
         fclubRef = FirebaseDatabase.getInstance().getReference("FCLUB_DATA");
         fclubRef.child("FCLUB_ROOMS_DATA").addValueEventListener(new ValueEventListener() {

@@ -72,7 +72,7 @@
                 android:text="REMOVE FROOM QUEUE"
                 android:textAlignment="center"
                 android:textColor="#fff"
-                android:paddingTop="2"
+                android:paddingTop="2dp"
 
 
 

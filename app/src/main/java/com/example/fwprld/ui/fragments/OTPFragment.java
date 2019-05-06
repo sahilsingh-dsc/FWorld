@@ -29,8 +29,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.TimeUnit;
 
@@ -275,7 +278,52 @@ public class OTPFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            startActivity(new Intent(getContext() , MainActivity.class));
+
+                           final String uid  = firebaseAuth.getCurrentUser().getUid();
+
+                            final DatabaseReference profileRef = FirebaseDatabase.getInstance().getReference("FWORLD_USER_DATA").child("USER_PROFILE");
+
+                            profileRef.child("USER_BASIC_INFO").child(uid).addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.hasChildren()){
+
+                                    }else {
+
+                                        final DatabaseReference fidCounterRef = FirebaseDatabase.getInstance().getReference("FWORLD_VARIABLES");
+                                        fidCounterRef.child("USER_ID_COUNTER").addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                                String fid_counter =  (String) dataSnapshot.child("fid_counter").getValue();
+                                                assert fid_counter != null;
+                                                int fid_to_int = Integer.parseInt(fid_counter);
+                                                int fid_updated = fid_to_int+1;
+                                                String fid = "FW"+fid_updated;
+                                                Toast.makeText(getContext(), ""+fid, Toast.LENGTH_SHORT).show();
+                                                profileRef.child("USER_BASIC_INFO").child(uid).child("user_fid").setValue(fid);
+                                                fidCounterRef.child("USER_ID_COUNTER").setValue(fid_updated);
+                                                startActivity(new Intent(getContext() , MainActivity.class));
+                                                loadingDialog.dismiss();
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+//
+
+//
                             loadingDialog.dismiss();
                         }else {
                             Toast.makeText(getContext(), "" + task.getException(), Toast.LENGTH_SHORT).show();

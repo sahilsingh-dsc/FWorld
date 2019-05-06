@@ -10,5 +10,6 @@
     <color name="colorBlack">#000000</color>
     <color name="goldcolor">#BD9533</color>
     <color name="purpule">#800080</color>
+    <color name="bgColor">#FFFFFF</color>
 
 </resources>
