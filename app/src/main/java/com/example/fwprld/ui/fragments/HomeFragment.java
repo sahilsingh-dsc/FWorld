@@ -14,9 +14,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterViewFlipper;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.fwprld.R;
 import com.example.fwprld.adapters.MyCustomPager;
 import com.example.fwprld.adapters.RecommendAdapter;
@@ -42,6 +45,8 @@ public class HomeFragment extends Fragment {
     private MyCustomPager adapter;
     DatabaseReference homeFragRef;
 
+    ImageView imgFLiveGIF, imgFTalentGIF, imgFClubGIF;
+
     public HomeFragment() {
 
     }
@@ -51,6 +56,28 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        imgFLiveGIF = view.findViewById(R.id.imgFLiveGIF);
+        Glide.with(getContext())
+                .load(R.drawable.flive_bg)
+                .placeholder(R.drawable.flive_bg)
+                .into(imgFLiveGIF);
+
+        imgFTalentGIF = view.findViewById(R.id.imgFTalentGIF);
+        Glide.with(getContext())
+                .load(R.drawable.ftalent_bg)
+                .placeholder(R.drawable.ftalent_bg)
+                .into(imgFTalentGIF);
+
+        imgFClubGIF = view.findViewById(R.id.imgFClubGIF);
+        Glide.with(getContext())
+                .load(R.drawable.fclb_bg)
+                .placeholder(R.drawable.fclb_bg)
+                .into(imgFClubGIF);
+
+
+
+
         SearchView searchView=(SearchView)view.findViewById(R.id.search);
         adapterViewFlipper=(AdapterViewFlipper)view.findViewById(R.id.viewpager);
         adapter= new MyCustomPager(getContext(),IMAGES);
@@ -106,8 +133,9 @@ public class HomeFragment extends Fragment {
                     String recommended_song_image = (String) recSnap.child("recommended_song_image").getValue();
                     String recommended_song_name = (String) recSnap.child("recommended_song_name").getValue();
                     String recommended_song_singer = (String) recSnap.child("recommended_song_singer").getValue();
+                    String recommended_song_url = (String) recSnap.child("recommended_song_url").getValue();
 
-                    Recommend recommend = new Recommend(recommended_song_id, recommended_song_image ,recommended_song_name ,recommended_song_singer);
+                    Recommend recommend = new Recommend(recommended_song_id, recommended_song_image ,recommended_song_name ,recommended_song_singer, recommended_song_url);
                     recommendList.add(recommend);
                 }
 

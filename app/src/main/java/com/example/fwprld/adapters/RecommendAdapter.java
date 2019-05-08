@@ -1,6 +1,8 @@
 package com.example.fwprld.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.fwprld.R;
 import com.example.fwprld.models.Recommend;
+import com.example.fwprld.ui.activities.SoloActivity;
 
 import java.util.List;
 
@@ -40,10 +43,27 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
     @Override
     public void onBindViewHolder(RecommendViewHolder holder, int position) {
 
-        Recommend recommend = recommendList.get(position);
+        final Recommend recommend = recommendList.get(position);
         holder.textViewTitle.setText(recommend.getRecommended_song_name());
         holder.textViewSingerName.setText(recommend.getRecommended_song_singer());
         Glide.with(mCtx).load(recommend.getRecommended_song_image()).into(holder.imageView);
+        holder.txtSingSong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (recommend.getRecommended_song_url() != null){
+                    Intent songIntent = new Intent(mCtx, SoloActivity.class);
+                    Bundle songBundle = new Bundle();
+                    songBundle.putString("recommended_song_name", recommend.getRecommended_song_name());
+                    songBundle.putString("recommended_song_singer", recommend.getRecommended_song_singer());
+                    songBundle.putString("song_url", recommend.getRecommended_song_url());
+                    songIntent.putExtras(songBundle);
+                    mCtx.startActivity(songIntent);
+
+                }
+
+            }
+        });
 
     }
 
@@ -56,7 +76,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
 
     class RecommendViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewSingerName, textViewTitle;
+        TextView textViewSingerName, textViewTitle, txtSingSong;
         ImageView imageView;
 
         public RecommendViewHolder(View itemView) {
@@ -64,6 +84,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewSingerName = itemView.findViewById(R.id.textViewSingerName);
             imageView = itemView.findViewById(R.id.imgProfileAvatar);
+            txtSingSong = itemView.findViewById(R.id.txtSingSong);
         }
     }
 }

@@ -155,6 +155,15 @@ public class EditProfileActivity extends AppCompatActivity implements DatePicker
             }
         });
 
+        avatarStoreRef = FirebaseStorage.getInstance().getReference("FWORLD_USER_AVATAR").child(fid+".jpg");
+        avatarStoreRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                avatar_url = uri.toString();
+                Glide.with(EditProfileActivity.this).load(avatar_url).into(imgProfileAvatar);
+            }
+        });
+
 
     }
 
@@ -197,13 +206,7 @@ public class EditProfileActivity extends AppCompatActivity implements DatePicker
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     loadingDialog.dismiss();
                     Toast.makeText(EditProfileActivity.this, "Upload successful", Toast.LENGTH_SHORT).show();
-                    avatarStoreRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                         avatar_url = uri.toString();
-                            Toast.makeText(EditProfileActivity.this, ""+avatar_url, Toast.LENGTH_SHORT).show();
-                        }
-                    });
+
 
                 }
             }).addOnFailureListener(new OnFailureListener() {
@@ -339,7 +342,7 @@ public class EditProfileActivity extends AppCompatActivity implements DatePicker
                 EducationData educationData = new EducationData(school_name, start_date ,end_date);
 
                 profileRef = FirebaseDatabase.getInstance().getReference("FWORLD_USER_DATA").child("USER_PROFILE");
-                profileRef.child("USER_EDUCATION").push().setValue(educationData);
+                profileRef.child("USER_EDUCATION").child(fid).push().setValue(educationData);
                 eduDialog.dismiss();
                 Toast.makeText(EditProfileActivity.this, "Saved", Toast.LENGTH_SHORT).show();
 
@@ -379,7 +382,7 @@ public class EditProfileActivity extends AppCompatActivity implements DatePicker
         educationDataList.clear();
 
         profileRef = FirebaseDatabase.getInstance().getReference("FWORLD_USER_DATA").child("USER_PROFILE");
-        profileRef.child("USER_EDUCATION").addValueEventListener(new ValueEventListener() {
+        profileRef.child("USER_EDUCATION").child(fid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 educationDataList.clear();
@@ -405,17 +408,14 @@ public class EditProfileActivity extends AppCompatActivity implements DatePicker
 
             }
         });
-
-
     }
 
 
     private void saveUserInfo(){
 
-        String user_avatar, user_wall, user_name, user_fid, user_gender, user_birthday, user_relationship_status, user_about, user_status;
+        String user_name, user_fid, user_gender, user_birthday, user_relationship_status, user_about, user_status;
 
-        user_avatar = avatar_url;
-        user_wall = "null";
+
         user_name = txtProfileName.getText().toString();
         user_fid = firebaseUser.getUid();
         user_gender = txtEditProfileGender.getText().toString();
@@ -424,7 +424,7 @@ public class EditProfileActivity extends AppCompatActivity implements DatePicker
         user_about = txtEditProfileHomeTown.getText().toString();
         user_status = etxtProfileStatus.getText().toString();
 
-        BasicInfoData basicInfoData = new BasicInfoData(user_avatar, user_wall, user_name, user_fid, user_gender, user_birthday ,user_relationship_status, user_about, user_status);
+        BasicInfoData basicInfoData = new BasicInfoData(user_name, user_fid, user_gender, user_birthday ,user_relationship_status, user_about, user_status);
 
         profileRef = FirebaseDatabase.getInstance().getReference("FWORLD_USER_DATA").child("USER_PROFILE");
 
@@ -441,10 +441,8 @@ public class EditProfileActivity extends AppCompatActivity implements DatePicker
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                String user_avatar, user_wall, user_name, user_fid, user_gender, user_birthday, user_relationship_status, user_about, user_status;
+                String user_name, user_fid, user_gender, user_birthday, user_relationship_status, user_about, user_status;
 
-                user_avatar = (String) dataSnapshot.child("user_avatar").getValue();
-                user_wall = (String) dataSnapshot.child("user_wall").getValue();
                 user_name = (String) dataSnapshot.child("user_name").getValue();
                 user_fid = (String) dataSnapshot.child("user_fid").getValue();
                 user_gender = (String) dataSnapshot.child("user_gender").getValue();
@@ -461,7 +459,7 @@ public class EditProfileActivity extends AppCompatActivity implements DatePicker
                 txtEditProfileRelationStatus.setText(user_relationship_status);
                 txtEditProfileHomeTown.setText(user_about);
                 etxtProfileStatus.setText(user_status);
-                Glide.with(EditProfileActivity.this).load(user_avatar).into(imgProfileAvatar);
+
 
             }
 
@@ -473,9 +471,4 @@ public class EditProfileActivity extends AppCompatActivity implements DatePicker
 
 
     }
-
-
-
-
-
 }
