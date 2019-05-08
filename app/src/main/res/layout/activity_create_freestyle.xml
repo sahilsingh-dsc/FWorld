@@ -38,15 +38,15 @@
         </LinearLayout>
 
 
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                app:tabMode="fixed"
-                app:tabGravity="fill"
-                android:layout_marginTop="70dp"/>
-
-
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="70dp"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            android:background="#F2F4F4"
+            />
 
     </RelativeLayout>
     <RelativeLayout
@@ -57,12 +57,12 @@
         android:layout_marginTop="160dp">
 
         <TextView
+            android:id="@+id/Creatsong_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Creatsong_id"
-            android:text="Create your own song"
             android:layout_centerHorizontal="true"
-            android:textSize="15dp"/>
+            android:text="Create your own song"
+            android:textSize="15dp" />
         <TextView
             android:layout_width="70dp"
             android:layout_height="20dp"
