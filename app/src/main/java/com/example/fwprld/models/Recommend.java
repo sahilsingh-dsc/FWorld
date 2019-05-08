@@ -5,13 +5,16 @@ public class Recommend   {
     private String recommended_song_image;
     private String recommended_song_name;
     private String recommended_song_singer;
+    private String recommended_song_url;
 
-    public Recommend(String recommended_song_id, String recommended_song_image, String recommended_song_name, String recommended_song_singer) {
+    public Recommend(String recommended_song_id, String recommended_song_image, String recommended_song_name, String recommended_song_singer, String recommended_song_url) {
         this.recommended_song_id = recommended_song_id;
         this.recommended_song_image = recommended_song_image;
         this.recommended_song_name = recommended_song_name;
         this.recommended_song_singer = recommended_song_singer;
+        this.recommended_song_url = recommended_song_url;
     }
+
 
     public String getRecommended_song_id() {
         return recommended_song_id;
@@ -43,5 +46,13 @@ public class Recommend   {
 
     public void setRecommended_song_singer(String recommended_song_singer) {
         this.recommended_song_singer = recommended_song_singer;
+    }
+
+    public String getRecommended_song_url() {
+        return recommended_song_url;
+    }
+
+    public void setRecommended_song_url(String recommended_song_url) {
+        this.recommended_song_url = recommended_song_url;
     }
 }

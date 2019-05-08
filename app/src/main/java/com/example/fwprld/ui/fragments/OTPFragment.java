@@ -279,51 +279,8 @@ public class OTPFragment extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
 
-                           final String uid  = firebaseAuth.getCurrentUser().getUid();
+                            startActivity(new Intent(getContext() , MainActivity.class));
 
-                            final DatabaseReference profileRef = FirebaseDatabase.getInstance().getReference("FWORLD_USER_DATA").child("USER_PROFILE");
-
-                            profileRef.child("USER_BASIC_INFO").child(uid).addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.hasChildren()){
-
-                                    }else {
-
-                                        final DatabaseReference fidCounterRef = FirebaseDatabase.getInstance().getReference("FWORLD_VARIABLES");
-                                        fidCounterRef.child("USER_ID_COUNTER").addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                                                String fid_counter =  (String) dataSnapshot.child("fid_counter").getValue();
-                                                assert fid_counter != null;
-                                                int fid_to_int = Integer.parseInt(fid_counter);
-                                                int fid_updated = fid_to_int+1;
-                                                String fid = "FW"+fid_updated;
-                                                Toast.makeText(getContext(), ""+fid, Toast.LENGTH_SHORT).show();
-                                                profileRef.child("USER_BASIC_INFO").child(uid).child("user_fid").setValue(fid);
-                                                fidCounterRef.child("USER_ID_COUNTER").setValue(fid_updated);
-                                                startActivity(new Intent(getContext() , MainActivity.class));
-                                                loadingDialog.dismiss();
-                                            }
-
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                            }
-                                        });
-
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                }
-                            });
-//
-
-//
                             loadingDialog.dismiss();
                         }else {
                             Toast.makeText(getContext(), "" + task.getException(), Toast.LENGTH_SHORT).show();

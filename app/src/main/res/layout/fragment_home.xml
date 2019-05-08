@@ -50,12 +50,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#000">
+
                     <ImageView
+                        android:id="@+id/imgFLiveGIF"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/homepage1"
-                        android:alpha="0.4"
-                        android:scaleType="centerCrop"/>
+                        android:alpha="0.5"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/homepage1" />
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -87,12 +89,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#000">
+
                     <ImageView
+                        android:id="@+id/imgFTalentGIF"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/homepage2"
-                        android:alpha="0.4"
-                        android:scaleType="centerCrop"/>
+                        android:alpha="0.5"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/homepage2" />
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -122,12 +126,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#000">
+
                     <ImageView
+                        android:id="@+id/imgFClubGIF"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/homepage3"
-                        android:alpha="0.4"
-                        android:scaleType="centerCrop"/>
+                        android:alpha="0.5"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/homepage3" />
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

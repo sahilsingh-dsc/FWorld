@@ -59,7 +59,7 @@
                 android:orientation="vertical"
                 android:layout_margin="10dp">
                 <TextView
-                    android:id="@+id/rating"
+                    android:id="@+id/txtSingSong"
                     android:layout_width="60dp"
                     android:layout_height="30dp"
                     android:layout_margin="3dp"
