@@ -26,9 +26,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class PopularFragment extends Fragment {
 
     private AdapterViewFlipper adapterViewFlipper;
@@ -36,17 +33,16 @@ public class PopularFragment extends Fragment {
     private MyCustomPager adapter;
     RecyclerView recyclerView;
     List<FTalent> ftalentList;
-    String ftal_user, song_id, song_image, song_name, song_plays, song_singer, song_playtime, user_fullname, user_image;
+    String ftal_user, song_id, song_image, song_name, song_plays, song_singer, song_playtime, songby_name, songby_image;
     android.widget.SearchView searchView;
+
     public PopularFragment() {
-        // Required empty public constructor
     }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
        View v = inflater.inflate(R.layout.fragment_popular, container, false);
         adapterViewFlipper=(AdapterViewFlipper)v.findViewById(R.id.viewpager);
         searchView= (android.widget.SearchView) v.findViewById(R.id.search);
@@ -74,23 +70,11 @@ public class PopularFragment extends Fragment {
                     song_plays = (String) ftalSnap.child("SONG_DETAILS").child("song_plays").getValue();
                     song_singer = (String) ftalSnap.child("SONG_DETAILS").child("song_singer").getValue();
                     song_playtime = (String) ftalSnap.child("SONG_DETAILS").child("song_playtime").getValue();
+                    songby_name = (String) ftalSnap.child("SONG_DETAILS").child("songby_name").getValue();
+                    songby_image = (String) ftalSnap.child("SONG_DETAILS").child("songby_image").getValue();
 
-                    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("USER_DATA");
-                    assert ftal_user != null;
-                    userRef.child("USER_PROFILE").child(ftal_user).addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            user_fullname = (String) dataSnapshot.child("user_fullname").getValue();
-                            user_image = (String) dataSnapshot.child("user_image").getValue();
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-                            Toast.makeText(getContext(), "Database Error", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-
-                    FTalent fTalent = new FTalent(ftal_user, song_id ,song_image ,song_name ,song_plays ,song_singer, song_playtime, user_fullname ,user_image);
+                    FTalent fTalent = new FTalent(ftal_user, song_id ,song_image ,song_name ,song_plays ,song_singer, song_playtime, songby_name ,songby_image);
                     ftalentList.add(fTalent);
 
                 }
@@ -105,10 +89,6 @@ public class PopularFragment extends Fragment {
 
             }
         });
-
-
-        FTalentAdapter adapter = new FTalentAdapter(getContext(),  ftalentList);
-        recyclerView.setAdapter(adapter);
 
         return v;
     }

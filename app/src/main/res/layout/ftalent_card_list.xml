@@ -140,15 +140,15 @@
                 android:id="@+id/btncreate"
                 android:layout_width="70dp"
                 android:layout_height="20dp"
-                android:layout_alignParentBottom="true"
-                android:layout_toRightOf="@+id/imgThumb"
-                android:layout_marginLeft="10dp"
-                android:textSize="10sp"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/purpule"
                 android:background="@drawable/roundpurple"
                 android:gravity="center"
-                android:text="Create"/>
+                android:text="Create"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/purpule"
+                android:textSize="10sp" />
             <TextView
                 android:layout_width="70dp"
                 android:layout_height="20dp"

@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout profile,moment;
+    LinearLayout profile,moment, mic;
     int count=0;
     AlertDialog alertDialog;
     FrameLayout frameLayout;
@@ -35,6 +35,20 @@ public class MainActivity extends AppCompatActivity {
 
         profile=(LinearLayout)findViewById(R.id.profile);
         moment=(LinearLayout)findViewById(R.id.moment);
+        mic = (LinearLayout) findViewById(R.id.mic);
+
+        mic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame, new HomeFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
         frameLayout=(FrameLayout)findViewById(R.id.frame);
         moment.setOnClickListener(new View.OnClickListener() {
             @Override

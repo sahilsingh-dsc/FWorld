@@ -8,6 +8,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+
+
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -17,7 +22,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.SoloActivity"></activity>
+        <activity android:name=".ui.activities.SoloActivity"/>
         <activity android:name=".ui.activities.PrivacyPolicyActivity" />
         <activity android:name=".ui.activities.TermServiceActivity" />
         <activity android:name=".ui.activities.RefundCancellationActivity" />
@@ -34,12 +39,12 @@
             android:name=".ui.activities.ChooseLanguageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name=".ui.activities.CreateFreeStyleActivity"
             android:screenOrientation="portrait" />
 
 
         <activity
-            android:name=".ui.activities.CreateFreeStyleActivity"
+            android:name=".ui.activities.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

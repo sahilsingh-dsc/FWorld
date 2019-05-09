@@ -24,7 +24,7 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
 
     private Context mCtx;
     private List<FTalent> fTalentList;
-    String[] Cat = {"Music Creator", "Dancing","Comedian", "Guitarist", "Story Teller", "Shero Shayari", "Others"};
+    String[] Cat = {"Music Creator", "Dancing","Comedian", "Story Teller", "Others"};
     String category;
 
     public FTalentAdapter(Context mCtx, List<FTalent> fTalentList) {
@@ -48,10 +48,8 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
         holder.textViewSongName.setText(fTalent.getSong_name());
         holder.textViewPlayTime.setText(fTalent.getSong_playtime());
         holder.txtSongPlaysCount.setText(fTalent.getSong_plays());
-//        Toast.makeText(mCtx, ""+fTalent.getSinger_image(), Toast.LENGTH_SHORT).show();
-//        Glide.with(mCtx).load(fTalent.getSinger_image()).into(holder.imageView);
-//        Glide.with(mCtx).load(fTalent.getSinger_image()).into(holder.imageViewuser);
-      //  Toast.makeText(mCtx, ""+fTalent.getSinger_name(), Toast.LENGTH_SHORT).show();
+        Glide.with(mCtx).load(fTalent.getSinger_image()).into(holder.imageViewuser);
+        Glide.with(mCtx).load(fTalent.getSong_image()).into(holder.imgThumb1);
 
         holder.textViewCreate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +70,7 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
     class FTalentViewHolder extends RecyclerView.ViewHolder {
 
         TextView textViewUserName,textViewSongName, textViewPlayTime,textViewCreate, txtSongPlaysCount;
-        ImageView imageView, imageViewuser;
+        ImageView imageView, imageViewuser, imgThumb1;
 
         public FTalentViewHolder(View itemView) {
             super(itemView);
@@ -82,6 +80,7 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
             txtSongPlaysCount = itemView.findViewById(R.id.txtSongPlaysCount);
             textViewCreate = itemView.findViewById(R.id.btncreate);
             imageView = itemView.findViewById(R.id.imgProfileAvatar);
+            imgThumb1 = itemView.findViewById(R.id.imgThumb1);
             imageViewuser = itemView.findViewById(R.id.imageViewuser);
         }
     }

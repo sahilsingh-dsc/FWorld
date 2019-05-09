@@ -35,7 +35,7 @@ public class FTalentFragment extends Fragment {
     RecyclerView recyclerView;
     List<FTalent> ftalentList;
     View view;
-    String ftal_user, song_id, song_image, song_name, song_plays, song_singer, song_playtime, singer_name, singer_image;
+    String ftal_user, song_id, song_image, song_name, song_plays, song_singer, song_playtime, songby_name, songby_image;
 
     public FTalentFragment(){
 
@@ -64,26 +64,11 @@ public class FTalentFragment extends Fragment {
                     song_plays = (String) ftalSnap.child("SONG_DETAILS").child("song_plays").getValue();
                     song_singer = (String) ftalSnap.child("SONG_DETAILS").child("song_singer").getValue();
                     song_playtime = (String) ftalSnap.child("SONG_DETAILS").child("song_playtime").getValue();
+                    songby_name = (String) ftalSnap.child("SONG_DETAILS").child("songby_name").getValue();
+                    songby_image = (String) ftalSnap.child("SONG_DETAILS").child("songby_image").getValue();
 
-                    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("USER_DATA");
-                    userRef.child("USER_PROFILE").child(ftal_user).addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                            singer_name = (String) dataSnapshot.child("user_name").getValue();
-                            singer_image = (String) dataSnapshot.child("user_image").getValue();
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-                            Toast.makeText(getContext(), "Database Error", Toast.LENGTH_SHORT).show();
-                        }
-
-                    });
-
-                    Toast.makeText(getContext(), ""+singer_name, Toast.LENGTH_SHORT).show();
-                    FTalent fTalent = new FTalent(ftal_user, song_id ,song_image ,song_name ,song_plays ,song_singer, song_playtime, singer_name ,singer_image);
+                    FTalent fTalent = new FTalent(ftal_user, song_id ,song_image ,song_name ,song_plays ,song_singer, song_playtime, songby_name ,songby_image);
                     ftalentList.add(fTalent);
 
                 }

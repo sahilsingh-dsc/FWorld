@@ -1,5 +1,8 @@
 package com.example.fwprld.ui.activities;
 
+import android.content.res.Configuration;
+import android.hardware.Camera;
+import android.hardware.Camera.Parameters;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
@@ -29,12 +32,7 @@ public class SoloActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     MediaRecorder mediaRecorder;
 
-    private static final String LOG_TAG = "AudioRecording";
-    private static String mFileName = null;
-    public static final int REQUEST_AUDIO_PERMISSION_CODE = 1;
-
     String songState = "0";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +42,7 @@ public class SoloActivity extends AppCompatActivity {
         btnPlaySong = findViewById(R.id.btnPlaySong);
         txtSongPlayName = findViewById(R.id.txtSongPlayName);
         txtSongPlaySingerName = findViewById(R.id.txtSongPlaySingerName);
+
 
 
         songBundle = getIntent().getExtras();
@@ -56,16 +55,6 @@ public class SoloActivity extends AppCompatActivity {
         txtSongPlaySingerName.setText(recommended_song_singer);
 
         mediaPlayer = new MediaPlayer();
-
-//        mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
-//        mFileName += "/AudioRecording.3gp";
-//
-//        mediaRecorder = new MediaRecorder();
-//        mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-//        mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-//        mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-//        mediaRecorder.setOutputFile(mFileName);
-
 
         btnPlaySong.setOnClickListener(new View.OnClickListener() {
             @Override
