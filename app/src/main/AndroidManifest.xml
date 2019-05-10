@@ -44,7 +44,7 @@
 
 
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name=".ui.activities.NotificationActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

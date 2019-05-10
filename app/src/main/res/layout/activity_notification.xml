@@ -5,37 +5,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/notirelative_id">
+
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/notirelative_id">
+        android:layout_centerVertical="true"
+        android:textSize="6sp"
+        android:padding="5dp"
+        android:textColor="#000"
+        android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="10dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:drawablePadding="20dp"
+        android:padding="10dp"
+        android:text="Notification"
+        android:textColor="#000"
+        android:textSize="16sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:textSize="6sp"
-            android:padding="5dp"
-            android:textColor="#000"
-            android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
-            android:drawablePadding="10dp"
-            android:layout_marginTop="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="56dp"
-            android:layout_marginLeft="56dp"
-            android:layout_toEndOf="@+id/null"
-            android:layout_toRightOf="@+id/null"
-            android:drawablePadding="20dp"
-            android:padding="10dp"
-            android:text="Notification"
-            android:textColor="#000"
-            android:textSize="16sp" />
-
-    </RelativeLayout>
+</RelativeLayout>
 
 
 
@@ -55,10 +53,24 @@
             app:cardBackgroundColor="#F77063"
             >
 
+            <ImageView
+                android:id="@+id/team_id"
+                android:layout_width="70dp"
+                android:layout_height="90dp"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginVertical="35dp"
+                android:src="@drawable/team" />
 
-
-
-       </android.support.v7.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friends"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="120dp"
+                />
+        </android.support.v7.widget.CardView>
 
 
         <android.support.v7.widget.CardView
@@ -70,7 +82,23 @@
             android:layout_toRightOf="@+id/firstcard_id"
             app:cardBackgroundColor="#69C8A4"
             >
-
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:id="@+id/mention_id"
+                android:src="@drawable/contact"
+                android:layout_marginHorizontal="60dp"
+                android:layout_marginVertical="45dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mention"
+                android:textColor="#fff"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="120dp"
+                android:textSize="20dp"
+                />
 
         </android.support.v7.widget.CardView>
 
@@ -91,7 +119,23 @@
             android:id="@+id/thirdcard_id"
             app:cardBackgroundColor="#3CA1CF"
             >
-
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="90dp"
+                android:id="@+id/chat_id"
+                app:srcCompat="@drawable/ic_speech_bubble"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginVertical="35dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chat"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="120dp"
+                />
 
         </android.support.v7.widget.CardView>
 
@@ -103,9 +147,25 @@
             app:cardCornerRadius="8dp"
             android:id="@+id/forthcard_id"
             android:layout_toRightOf="@+id/thirdcard_id"
-            app:cardBackgroundColor="#FFC300"
-            >
+            app:cardBackgroundColor="#FFC300">
 
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="90dp"
+                android:id="@+id/gift_id"
+                android:src="@drawable/gift"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginVertical="35dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gift"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:layout_marginLeft="75dp"
+                android:layout_marginTop="124dp"
+                />
         </android.support.v7.widget.CardView>
 
 
