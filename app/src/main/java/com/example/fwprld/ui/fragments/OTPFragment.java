@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,11 +30,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.concurrent.TimeUnit;
 
@@ -45,13 +44,12 @@ public class OTPFragment extends Fragment {
     String mobile_number;
     TextView num_id;
     private EditText code_one, code_two, code_three, code_four, code_five, code_six;
-    private Button continuebutton;
     FirebaseAuth firebaseAuth;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     private String mVerificationId;
-    private String reset_mobile, reset_password;
     private AlertDialog loadingDialog;
+    private FirebaseFirestore userDB;
 
     public OTPFragment() {}
 
@@ -65,6 +63,7 @@ public class OTPFragment extends Fragment {
         }
 
         firebaseAuth = FirebaseAuth.getInstance();
+        userDB = FirebaseFirestore.getInstance();
 
         num_id = view.findViewById(R.id.num_id);
         num_id.setText(mobile_number);
@@ -83,7 +82,7 @@ public class OTPFragment extends Fragment {
                 .setCancelable(false)
                 .build();
 
-        continuebutton = view.findViewById(R.id.continuebutton);
+        Button continuebutton = view.findViewById(R.id.continuebutton);
         continuebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -279,7 +278,34 @@ public class OTPFragment extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
 
-                            startActivity(new Intent(getContext() , MainActivity.class));
+//                            final DocumentReference userRef = userDB.collection("APP_PARAMETERS").document("COUNTERS");
+//                            userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//
+//                                    if (task.isSuccessful()){
+//                                        DocumentSnapshot counter = task.getResult();
+//                                        Toast.makeText(getContext(), ""+counter.get("user_counter"), Toast.LENGTH_SHORT).show();
+//                                        String counter_value = (String) counter.get("user_counter");
+//                                        int counter_value_int = Integer.parseInt(counter_value);
+//                                        int updated_counter = counter_value_int+1;
+//                                        userRef.set(updated_counter);
+//                                        Toast.makeText(getContext(), ""+updated_counter, Toast.LENGTH_SHORT).show();
+//                                        startActivity(new Intent(getContext() , MainActivity.class));
+//                                        loadingDialog.dismiss();
+//
+//                                    }else {
+//
+//                                        Toast.makeText(getContext(), "Database Error", Toast.LENGTH_SHORT).show();
+//                                        loadingDialog.dismiss();
+//
+//                                    }
+//
+//                                }
+//                            });
+
+
+                         startActivity(new Intent(getContext() , MainActivity.class));
 
                             loadingDialog.dismiss();
                         }else {
