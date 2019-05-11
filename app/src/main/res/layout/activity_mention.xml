@@ -37,6 +37,7 @@
         android:layout_height="90dp"
         android:orientation="horizontal"
         android:layout_below="@+id/mentionrelative_id"
+        android:layout_marginTop="10dp"
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
