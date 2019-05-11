@@ -29,6 +29,7 @@ public class MomentDiscoverFragment extends Fragment implements TabLayout.OnTabS
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_moment_discover, container, false);
         tabLayout = (TabLayout)view.findViewById(R.id.tabLayout);
+        //tabLayout.addTab(tabLayout.newTab().setText("Moments"));
         tabLayout.addTab(tabLayout.newTab().setText("Moments"));
         tabLayout.addTab(tabLayout.newTab().setText("Discover"));
         frameLayout= (FrameLayout)view.findViewById(R.id.frame);

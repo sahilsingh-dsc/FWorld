@@ -1,6 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintMessage"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgSenderPhoto"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/github"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSenderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Shubham Jain"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toEndOf="@+id/imgSenderPhoto"
+        app:layout_constraintTop_toTopOf="@+id/imgSenderPhoto" />
+
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello there..."
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/txtSenderName"
+        app:layout_constraintTop_toBottomOf="@+id/txtSenderName" />
+
+    <TextView
+        android:id="@+id/txtMessageRecTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="02:00 PM"
+        android:textColor="@color/common_google_signin_btn_text_light_default"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgCircle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        android:src="@color/purpule"
+        app:layout_constraintEnd_toEndOf="@+id/txtMessageRecTime"
+        app:layout_constraintStart_toStartOf="@+id/txtMessageRecTime"
+        app:layout_constraintTop_toBottomOf="@+id/txtMessageRecTime" />
+
+    <TextView
+        android:id="@+id/txtMessageCount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="@color/bgColor"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgCircle"
+        app:layout_constraintEnd_toEndOf="@+id/imgCircle"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imgCircle"
+        app:layout_constraintTop_toTopOf="@+id/imgCircle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/divider17"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgSenderPhoto" />
+
 
 </android.support.constraint.ConstraintLayout>
