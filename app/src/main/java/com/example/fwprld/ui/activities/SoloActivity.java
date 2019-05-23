@@ -2,6 +2,7 @@ package com.example.fwprld.ui.activities;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.hardware.Camera;
@@ -44,7 +45,7 @@ public class SoloActivity extends AppCompatActivity {
     String recommended_song_name, recommended_song_singer, song_url;
     Button btnPlaySong;
     TextView txtSongPlayName, txtSongPlaySingerName;
-    ImageView imgVisual;
+    ImageView imgVisual, imgAudioList;
 
     MediaPlayer mediaPlayer;
     MediaRecorder mediaRecorder;
@@ -86,6 +87,13 @@ public class SoloActivity extends AppCompatActivity {
         btnPlaySong = findViewById(R.id.btnPlaySong);
         txtSongPlayName = findViewById(R.id.txtSongPlayName);
         txtSongPlaySingerName = findViewById(R.id.txtSongPlaySingerName);
+        imgAudioList = findViewById(R.id.imgAudioList);
+        imgAudioList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SoloActivity.this, RecordingListActivity.class));
+            }
+        });
 
 
 

@@ -13,7 +13,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.fwprld.R;
 import com.example.fwprld.models.Recommend;
+import com.example.fwprld.ui.activities.Camera2VideoImageActivity;
 import com.example.fwprld.ui.activities.SoloActivity;
+import com.example.fwprld.ui.activities.SoloVideoActivity;
 
 import java.util.List;
 
@@ -52,7 +54,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.Reco
             public void onClick(View v) {
 
                 if (recommend.getRecommended_song_url() != null){
-                    Intent songIntent = new Intent(mCtx, SoloActivity.class);
+                    Intent songIntent = new Intent(mCtx, Camera2VideoImageActivity.class);
                     Bundle songBundle = new Bundle();
                     songBundle.putString("recommended_song_name", recommend.getRecommended_song_name());
                     songBundle.putString("recommended_song_singer", recommend.getRecommended_song_singer());

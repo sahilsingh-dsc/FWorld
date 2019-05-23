@@ -11,5 +11,12 @@
     <color name="goldcolor">#BD9533</color>
     <color name="purpule">#800080</color>
     <color name="bgColor">#FFFFFF</color>
+    <color name="bgGreen">#4CCDDC39</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="agora_blue">#FF00A0EB</color>
+    <color name="grey_a">#FF878787</color>
+    <color name="lightColorAccent">#30FF4081</color>
+    <color name="dark_black">#CC262626</color>
 
 </resources>

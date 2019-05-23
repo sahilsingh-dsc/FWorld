@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:id="@+id/rl">
+
+    <TextView
+        android:id="@+id/creator"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="#fff"
+        android:layout_alignParentRight="true"
+        android:text="Music Creator"/>
+    <TextView
+        android:id="@+id/dancing"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="#fff"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="40dp"
+        android:text="Dancing"/>
+
+    <TextView
+        android:id="@+id/story"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="#fff"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="150dp"
+        android:layout_below="@+id/dancing"
+        android:layout_marginTop="20dp"
+        android:text="Story Trailer"/>
+    <TextView
+        android:id="@+id/create"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circle_center"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="#fff"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/dancing"
+        android:layout_marginTop="20dp"
+        android:text="Create"/>
+    <TextView
+        android:id="@+id/Comedian"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="#fff"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/story"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp"
+        android:text="Comedian"/>
+
+    <TextView
+        android:id="@+id/other"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="#fff"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/Comedian"
+        android:text="Other"/>
+
+
+
+</RelativeLayout>

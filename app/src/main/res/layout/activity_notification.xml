@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".ui.fragments.NotificationFragment">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/notirelative_id">
-
-
+        android:id="@+id/notificationrelative_id"
+        android:background="#fff">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,91 +27,158 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginStart="56dp"
+            android:layout_marginStart="150dp"
             android:layout_marginLeft="56dp"
-            android:layout_toEndOf="@+id/null"
-            android:layout_toRightOf="@+id/null"
             android:drawablePadding="20dp"
             android:padding="10dp"
             android:text="Notification"
             android:textColor="#000"
             android:textSize="16sp" />
-
     </RelativeLayout>
-
-
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/frndrelative_id"
-        android:layout_below="@+id/notirelative_id"
-        android:paddingTop="30dp">
+        android:id="@+id/firstnotirelative_id"
+        android:layout_below="@+id/notificationrelative_id"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        >
 
         <android.support.v7.widget.CardView
-            android:layout_width="190dp"
-            android:layout_height="190dp"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="8dp"
-            android:id="@+id/firstcard_id"
-            app:cardBackgroundColor="#F77063"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/cardFriends"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#ff6b6b"
             >
 
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/team"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="20dp"
 
-
-
-       </android.support.v7.widget.CardView>
-
-
-        <android.support.v7.widget.CardView
-            android:layout_width="190dp"
-            android:layout_height="190dp"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="8dp"
-            android:id="@+id/secondcard_id"
-            android:layout_toRightOf="@+id/firstcard_id"
-            app:cardBackgroundColor="#69C8A4"
-            >
-
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friends"
+                android:layout_marginTop="100dp"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:layout_marginHorizontal="35dp"
+                />
 
         </android.support.v7.widget.CardView>
 
-    </RelativeLayout>
+        <android.support.v7.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/cardMention"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/cardFriends"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#1dd1a1"
+            >
 
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/contact"
+                android:layout_marginHorizontal="45dp"
+                android:layout_marginTop="30dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mention"
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_marginTop="100dp"
+                android:layout_marginHorizontal="36dp"/>
+
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/chatrelative_id"
-        android:layout_below="@+id/frndrelative_id">
+        android:layout_below="@+id/firstnotirelative_id"
+        android:gravity="center"
+        android:layout_marginTop="14dp"
+        >
 
         <android.support.v7.widget.CardView
-            android:layout_width="190dp"
-            android:layout_height="190dp"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="8dp"
-            android:id="@+id/thirdcard_id"
-            app:cardBackgroundColor="#3CA1CF"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/cardChat"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#54a0fe"
             >
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/ic_speech_bubble"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="20dp"/>
 
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="100dp"
+                android:text="Comments"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#fff"
+                android:textSize="20dp" />
 
         </android.support.v7.widget.CardView>
 
-
         <android.support.v7.widget.CardView
-            android:layout_width="190dp"
-            android:layout_height="190dp"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="8dp"
-            android:id="@+id/forthcard_id"
-            android:layout_toRightOf="@+id/thirdcard_id"
-            app:cardBackgroundColor="#FFC300"
-            >
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/cardGift"
+            android:layout_toRightOf="@+id/cardChat"
+            android:layout_marginLeft="15dp"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#fecb58">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/gift"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="10dp"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gift"
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_marginTop="100dp"
+                android:layout_marginHorizontal="50dp"
+
+                />
 
         </android.support.v7.widget.CardView>
+
 
 
     </RelativeLayout>
+
+
+
+
+
+
+
+
+
 
 
 </RelativeLayout>

@@ -1,7 +1,10 @@
 package com.example.fwprld.adapters;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +44,7 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
     }
 
     @Override
-    public void onBindViewHolder(FTalentAdapter.FTalentViewHolder holder, int position) {
+    public void onBindViewHolder(final FTalentAdapter.FTalentViewHolder holder, int position) {
 
         FTalent fTalent = fTalentList.get(position);
 
@@ -54,7 +58,8 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
         holder.textViewCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Category();
+               Category();
+                //holder.relativeLayout.setVisibility(View.VISIBLE);
             }
         });
 
@@ -71,6 +76,7 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
 
         TextView textViewUserName,textViewSongName, textViewPlayTime,textViewCreate, txtSongPlaysCount;
         ImageView imageView, imageViewuser, imgThumb1;
+       // RelativeLayout relativeLayout;
 
         public FTalentViewHolder(View itemView) {
             super(itemView);
@@ -82,20 +88,24 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
             imageView = itemView.findViewById(R.id.imgProfileAvatar);
             imgThumb1 = itemView.findViewById(R.id.imgThumb1);
             imageViewuser = itemView.findViewById(R.id.imageViewuser);
+            //relativeLayout=itemView.findViewById(R.id.rl);
         }
     }
+    @SuppressLint("NewApi")
     private void Category() {
         final LayoutInflater li = LayoutInflater.from(mCtx);
 
-        View confirmDialog = li.inflate(R.layout.activity_create_dialog, null);
-        final ListView listView = (ListView) confirmDialog.findViewById(R.id.list);
+        View confirmDialog = li.inflate(R.layout.arc_menu, null);
+       // confirmDialog.setBackgroundColor(mCtx.getColor(R.color.transparent));
+       /* final ListView listView = (ListView) confirmDialog.findViewById(R.id.list);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(mCtx, android.R.layout.simple_list_item_1, Cat);
-        listView.setAdapter(arrayAdapter);
+        listView.setAdapter(arrayAdapter);*/
         AlertDialog.Builder alert = new AlertDialog.Builder(mCtx);
         alert.setView(confirmDialog);
         final AlertDialog alertDialog = alert.create();
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         alertDialog.show();
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+      /*  listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 alertDialog.dismiss();
@@ -103,6 +113,6 @@ public class FTalentAdapter extends RecyclerView.Adapter<FTalentAdapter.FTalentV
                 Toast.makeText(mCtx, ""+category, Toast.LENGTH_SHORT).show();
 
             }
-        });
+        });*/
     }
 }

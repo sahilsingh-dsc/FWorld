@@ -1,6 +1,7 @@
 package com.example.fwprld.ui.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
@@ -24,6 +25,7 @@ import com.example.fwprld.R;
 import com.example.fwprld.adapters.MyCustomPager;
 import com.example.fwprld.adapters.RecommendAdapter;
 import com.example.fwprld.models.Recommend;
+import com.example.fwprld.openlive.ui.MainActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -62,6 +64,13 @@ public class HomeFragment extends Fragment {
                 .load(R.drawable.flive_bg)
                 .placeholder(R.drawable.flive_bg)
                 .into(imgFLiveGIF);
+
+        imgFLiveGIF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), MainActivity.class));
+            }
+        });
 
         imgFTalentGIF = view.findViewById(R.id.imgFTalentGIF);
         Glide.with(getContext())
@@ -117,6 +126,9 @@ public class HomeFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
+
+
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recommendList = new ArrayList<>();

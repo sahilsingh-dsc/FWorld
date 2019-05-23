@@ -98,25 +98,7 @@
 
 
 
-    <!--    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="630dp"
-            android:layout_marginLeft="30dp"
-            android:background="@drawable/chat_transparent"
-            android:padding="10dp"
-            android:text="Amit Sharma"
-            android:textColor="#000"
-            android:textSize="16sp" />
 
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="20dp"
-            android:layout_marginHorizontal="390dp"
-            android:layout_marginVertical="680dp"
-            android:src="@drawable/menu">
-
-        </ImageView>-->
 
 
     </RelativeLayout>
