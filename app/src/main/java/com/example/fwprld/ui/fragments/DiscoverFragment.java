@@ -70,50 +70,51 @@ public class DiscoverFragment extends Fragment {
                 new Popular(
                         1,
                         "Shailesh",
-                        R.drawable.backimgpro));
+                        R.drawable.pop_img1));
 
         popularList.add(
                 new Popular(
                         2,
                         "Ajay",
-                        R.drawable.backimgpro));
+                        R.drawable.pop_img2));
         popularList.add(
                 new Popular(
                         3,
-                        "Rohan",
-                        R.drawable.backimgpro));
+                        "surbhi",
+                        R.drawable.pop_img3));
 
         //creating recyclerview adapter
        PopularAdapter adapter = new PopularAdapter(getContext(), popularList);
-        recyclerView.setAdapter(adapter);
-        recyclerViewftalent.setAdapter(adapter);
-        recyclerViewshared.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);//popular in mp
+        recyclerViewftalent.setAdapter(adapter);//ftalent
+        recyclerViewshared.setAdapter(adapter);//most shared
+
         topStarList = new ArrayList<>();
         topStarList.add(
                 new TopStar(
                         1,
                         "Shailesh",
-                        R.drawable.backimgpro));
+                        R.drawable.pop_img4));
 
         topStarList.add(
                 new TopStar(
                         2,
                         "Ajay",
-                        R.drawable.backimgpro));
+                        R.drawable.pop_img2));
         topStarList.add(
                 new TopStar(
                         3,
                         "Rohan",
-                        R.drawable.backimgpro));
+                        R.drawable.pop_img6));
         topStarList.add(
                 new TopStar(
                         4,
                         "Aliya",
-                        R.drawable.backimgpro));
+                        R.drawable.pop_img1));
         TopStarAdapter adapter1 = new TopStarAdapter(getContext(),topStarList);
-        recyclerViewtopstar.setAdapter(adapter1);
-        recyclerViewtopfriend.setAdapter(adapter1);
-        recyclerViewtopgifted.setAdapter(adapter1);
+        recyclerViewtopstar.setAdapter(adapter1);//top star
+        recyclerViewtopfriend.setAdapter(adapter1);//top friends
+        recyclerViewtopgifted.setAdapter(adapter1);//top gifted
         return v;
     }
 

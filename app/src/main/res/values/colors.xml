@@ -18,5 +18,13 @@
     <color name="grey_a">#FF878787</color>
     <color name="lightColorAccent">#30FF4081</color>
     <color name="dark_black">#CC262626</color>
+    <color name="career_dailog_bg">#EFEFF4</color>
+    <color name="ligh_gray">#ddd</color>
+    <!--<color name="vip_color">#F8117D</color>-->
+    <color name="vip_color">#81007F</color>
+    <color name="recharge_color">#BD9533</color>
+    <color name="recharge_bottom">#FF22CF29</color>
+
+    <color name="recharge_bottom_color">#A4DDDDDD</color>
 
 </resources>

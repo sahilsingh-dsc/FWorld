@@ -8,60 +8,93 @@ import android.widget.TextView;
 
 import com.example.fwprld.R;
 
-public class AboutActivity extends AppCompatActivity {
+public class AboutActivity extends AppCompatActivity implements View.OnClickListener{
+TextView tvBack;
 TextView about,contact,refund,terms,privacy;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        initCompo();
+        Listner();
+    }
 
-        about =(TextView)findViewById(R.id.aboutus);
+
+    private void Listner() {
+        tvBack.setOnClickListener(this);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),ChildAboutActivity.class));
-                finish();
+//                finish();
             }
         });
-        contact =(TextView)findViewById(R.id.contactus);
+
         contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),ContactUsActivity.class));
-                finish();
+//                finish();
             }
         });
-        refund =(TextView)findViewById(R.id.refund);
+
         refund.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),RefundCancellationActivity.class));
-                finish();
+//                finish();
             }
         });
-        terms =(TextView)findViewById(R.id.terms);
+
         terms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),TermServiceActivity.class));
-                finish();
+//                finish();
             }
         });
-        privacy =(TextView)findViewById(R.id.privacy);
+
         privacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),PrivacyPolicyActivity.class));
-                finish();
+//                finish();
             }
         });
     }
+
+    private void initCompo() {
+        tvBack=findViewById(R.id.tv_back);
+        about =(TextView)findViewById(R.id.aboutus);
+        contact =(TextView)findViewById(R.id.contactus);
+        refund =(TextView)findViewById(R.id.refund);
+        terms =(TextView)findViewById(R.id.terms);
+        privacy =(TextView)findViewById(R.id.privacy);
+
+
+    }
+
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),SettingActivity.class));
-        finish();
         super.onBackPressed();
+        finish();
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.tv_back:
+                finish();
+                break;
+        }
+    }
+//    @Override
+//    public void onBackPressed() {
+//        startActivity(new Intent(getApplicationContext(),SettingActivity.class));
+//        finish();
+//        super.onBackPressed();
+//    }
 
 
 }

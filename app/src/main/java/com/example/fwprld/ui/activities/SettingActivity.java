@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.fwprld.R;
+import com.example.fwprld.common.LoginSession;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -18,15 +19,16 @@ import org.w3c.dom.Text;
 import java.util.Objects;
 
 public class SettingActivity extends AppCompatActivity {
-TextView account,generalsetting,service,editprofile,about, txtLogoutUser;
+TextView account,generalsetting,service,editprofile,about, txtLogoutUser,tvBack,tvVip,tvNoble,tvRecharge;
 FirebaseUser firebaseUser;
+    LoginSession  sessionParam;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
+        sessionParam = new LoginSession(SettingActivity.this);
         account=(TextView)findViewById(R.id.account);
         generalsetting=(TextView)findViewById(R.id.generalsetting);
         service=(TextView)findViewById(R.id.service);
@@ -34,39 +36,70 @@ FirebaseUser firebaseUser;
         txtLogoutUser = findViewById(R.id.txtLogoutUser);
 
         editprofile=(TextView)findViewById(R.id.editprofile);
+        tvBack = findViewById(R.id.tv_back);
+        tvVip = findViewById(R.id.tv_vip);
+        tvNoble= findViewById(R.id.tv_noble);
+        tvRecharge= findViewById(R.id.tv_recharge);
+
+
+        tvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         editprofile.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  startActivity(new Intent(getApplicationContext(),EditProfileActivity.class));
-                 finish();
+//                 finish();
              }
          });
         account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),AccountActivity.class));
-                finish();
+//                finish();
             }
         });
         generalsetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),GeneralActivity.class));
-                finish();
+//                finish();
             }
         });
         service.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),CustomerServiceCenterActivity.class));
-                finish();
+//                finish();
             }
         });
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),AboutActivity.class));
-                finish();
+//                finish();
+            }
+        });
+
+        tvVip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ActVIP.class));
+            }
+        });
+        tvNoble.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ActNoble.class));
+            }
+        });
+        tvRecharge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ActRecharge.class));
             }
         });
 
@@ -89,11 +122,13 @@ FirebaseUser firebaseUser;
                 builder.setPositiveButton("Proceed", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                       new LoginSession(SettingActivity.this).LoggedInVal(SettingActivity.this,false);
+                        sessionParam.clearPreferences(SettingActivity.this);
                         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
                         firebaseAuth.signOut();
                         startActivity(new Intent(SettingActivity.this, MainActivity.class));
                         finish();
-
                     }
                 });
                 final AlertDialog dialog = builder.create();

@@ -63,7 +63,7 @@ public class FClubFragment extends Fragment {
 
 
 
-        fclubRef = FirebaseDatabase.getInstance().getReference("FCLUB_DATA");
+        fclubRef = FirebaseDatabase.getInstance().getReference("FCLUB_DATA");//13
         fclubRef.child("FCLUB_ROOMS_DATA").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

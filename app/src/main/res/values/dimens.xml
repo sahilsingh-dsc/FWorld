@@ -5,4 +5,19 @@
 
     <dimen name="fb_popup_window_width">240dp</dimen>
     <dimen name="fb_popup_window_height">182dp</dimen>
+<!--for broadcast streaming-->
+    <dimen name="publisher_height">120dp</dimen>
+    <dimen name="publisher_width">90dp</dimen>
+    <dimen name="publisher_end_margin">16dp</dimen>
+    <dimen name="publisher_right_margin">16dp</dimen>
+    <dimen name="publisher_bottom_margin">16dp</dimen>
+    <dimen name="publisher_padding">2dp</dimen>
+
+    <dimen name="message_history_height">120dp</dimen>
+    <dimen name="message_history_vertical_margin">8dp</dimen>
+    <dimen name="message_vertical_margin">1dp</dimen>
+    <dimen name="message_horizontal_margin">2dp</dimen>
+    <dimen name="spacing">5dp</dimen>
+    <dimen name="header">5dp</dimen>
+    <!--for broadcast streaming-->
 </resources>

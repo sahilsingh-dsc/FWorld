@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    android:padding="5dp"
+                    android:textColor="#000"
+                    android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+                    android:drawablePadding="20dp"
+                    android:text="VIP "/>
+            </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="?android:attr/listDivider" />
+            <RelativeLayout
+                android:id="@+id/rl_no_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="gone"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:id="@+id/iv_no_data"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/no_data"
+                      android:layout_centerHorizontal="true"
+                        />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gallery_msg"
+                        android:layout_below="@+id/iv_no_data"
+                        android:gravity="center"
+                        android:padding="10dp"
+
+                        />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:id="@+id/imgProfileAvatar"
+                android:src="@mipmap/ic_launcher"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:civ_border_color="@android:color/darker_gray"
+                android:layout_marginTop="20dp"
+                app:civ_border_width="5dp" />
+
+            <TextView
+                android:id="@+id/tv_user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:text="1452562856"
+                android:textColor="#000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical"
+                android:background="@drawable/custom_vip_bg"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:elevation="10dp"
+                >
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+android:text="7-Day Free Trial"
+    android:gravity="center"
+    android:padding="2dp"
+    android:layout_gravity="center"
+    android:textSize="18dp"
+    android:textColor="@android:color/white"
+   android:textStyle="bold"
+    />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+android:text="@string/seve_day_trial1"
+    android:gravity="center"
+    android:padding="2dp"
+    android:layout_gravity="center"
+    android:textSize="15dp"
+    android:textColor="@android:color/white"
+    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical"
+                android:background="@drawable/custom_vip_bg_normal"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:elevation="10dp"
+                >
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+android:text="1 Month"
+    android:gravity="center"
+    android:padding="2dp"
+    android:layout_gravity="center"
+    android:textSize="20dp"
+    android:textColor="@color/vip_color"
+   android:textStyle="bold"
+    />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+android:text="@string/one_month1"
+    android:gravity="center"
+    android:padding="2dp"
+    android:layout_gravity="center"
+    android:textSize="15dp"
+    android:textColor="@color/vip_color"
+    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical"
+                android:background="@drawable/custom_vip_bg_normal"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:elevation="10dp"
+                >
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+android:text="3 Months"
+    android:gravity="center"
+    android:padding="2dp"
+    android:layout_gravity="center"
+    android:textSize="20dp"
+    android:textColor="@color/vip_color"
+   android:textStyle="bold"
+    />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+android:text="@string/three_month1"
+    android:gravity="center"
+    android:padding="2dp"
+    android:layout_gravity="center"
+    android:textSize="15dp"
+    android:textColor="@color/vip_color"
+    />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="5dp"
+                >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Get exclusive benifites"
+       android:textSize="15dp"
+       android:textColor="#000"
+       android:padding="10dp"
+       />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="13sp"
+        android:padding="5dp"
+        android:textColor="@color/grey_a"
+        android:drawableLeft="@drawable/ic_checked"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/benifit1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="13sp"
+        android:padding="5dp"
+        android:textColor="@color/grey_a"
+        android:drawableLeft="@drawable/ic_checked"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/benifit2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="13sp"
+        android:padding="5dp"
+        android:textColor="@color/grey_a"
+        android:drawableLeft="@drawable/ic_checked"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="5dp"
+
+        android:text="@string/benifit3"/>
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="13sp"
+        android:padding="5dp"
+        android:textColor="@color/grey_a"
+        android:drawableLeft="@drawable/ic_checked"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="5dp"
+
+        android:text="@string/benifit4"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="13sp"
+        android:padding="5dp"
+        android:textColor="@color/grey_a"
+        android:drawableLeft="@drawable/ic_checked"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="5dp"
+
+        android:text="@string/benifit5"/>
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="13sp"
+        android:padding="5dp"
+        android:textColor="@color/grey_a"
+        android:drawableLeft="@drawable/ic_checked"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/benifit6"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="13sp"
+        android:padding="5dp"
+        android:textColor="@color/grey_a"
+        android:drawableLeft="@drawable/ic_checked"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/benifit7"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="13sp"
+        android:padding="5dp"
+        android:textColor="@color/grey_a"
+        android:drawableLeft="@drawable/ic_checked"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/benifit8"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="13sp"
+        android:padding="5dp"
+        android:textColor="@color/grey_a"
+        android:drawableLeft="@drawable/ic_checked"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/benifit9"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="13sp"
+        android:padding="5dp"
+        android:textColor="@color/grey_a"
+        android:drawableLeft="@drawable/ic_checked"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/benifit10"/>
+
+</LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+</ScrollView>
+</RelativeLayout>

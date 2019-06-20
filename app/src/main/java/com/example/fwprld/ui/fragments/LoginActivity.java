@@ -44,11 +44,8 @@ public class LoginActivity extends Fragment {
                     Toast.makeText(getContext(), "Please enter a valid mobile number", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 String mobile_number = countryCodeWithPlus+number;
-
                 sendOtpCode(mobile_number);
-
             }
         });
 
@@ -57,7 +54,6 @@ public class LoginActivity extends Fragment {
 
 
     private void sendOtpCode(String mobile_number){
-
         if (mobile_number != null){
             Bundle mobileBundle = new Bundle();
             mobileBundle.putString("mobile_number", mobile_number);
@@ -70,9 +66,6 @@ public class LoginActivity extends Fragment {
             fragmentTransaction.hide(LoginActivity.this);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
-
         }
-
     }
-
 }

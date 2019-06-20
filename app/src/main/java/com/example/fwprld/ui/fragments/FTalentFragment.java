@@ -50,7 +50,7 @@ public class FTalentFragment extends Fragment {
         ftalentList = new ArrayList<>();
         ftalentList.clear();
 
-        DatabaseReference ftalentRef = FirebaseDatabase.getInstance().getReference("FTALENT_DATA");
+        DatabaseReference ftalentRef = FirebaseDatabase.getInstance().getReference("FTALENT_DATA");//12
         ftalentRef.child("FTALENT_SONGS_DATA").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -66,7 +66,6 @@ public class FTalentFragment extends Fragment {
                     song_playtime = (String) ftalSnap.child("SONG_DETAILS").child("song_playtime").getValue();
                     songby_name = (String) ftalSnap.child("SONG_DETAILS").child("songby_name").getValue();
                     songby_image = (String) ftalSnap.child("SONG_DETAILS").child("songby_image").getValue();
-
 
                     FTalent fTalent = new FTalent(ftal_user, song_id ,song_image ,song_name ,song_plays ,song_singer, song_playtime, songby_name ,songby_image);
                     ftalentList.add(fTalent);

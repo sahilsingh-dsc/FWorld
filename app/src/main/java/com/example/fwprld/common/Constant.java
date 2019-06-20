@@ -28,4 +28,10 @@ public class Constant {
     public static final float BEAUTY_EFFECT_MAX_LIGHTNESS = 1.0f;
     public static final float BEAUTY_EFFECT_MAX_SMOOTHNESS = 1.0f;
     public static final float BEAUTY_EFFECT_MAX_REDNESS = 1.0f;
+
+    public static final String NOTI_URL = "https://fcm.googleapis.com/fcm/send";
+
+
+
+
 }

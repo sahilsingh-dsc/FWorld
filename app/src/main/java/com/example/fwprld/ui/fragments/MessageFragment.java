@@ -56,8 +56,6 @@ public class MessageFragment extends Fragment {
         recyclerMessage.setHasFixedSize(true);
         recyclerMessage.setLayoutManager(new LinearLayoutManager(getContext()));
 
-
-
         messageRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -68,14 +66,9 @@ public class MessageFragment extends Fragment {
                     sender_name = (String) messageSnap.child("sender_name").getValue();
                     message_received = (String) messageSnap.child("message_received").getValue();
                     sending_time = (String) messageSnap.child("sending_time").getValue();
-
                     UserMessages userMessages = new UserMessages(sender_image, sender_name, message_received ,sending_time);
                     userMessagesList.add(userMessages);
-
-
                 }
-
-
                 MessagesAdapter messagesAdapter = new MessagesAdapter(userMessagesList ,getContext());
                 recyclerMessage.setAdapter(messagesAdapter);
 

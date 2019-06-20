@@ -32,7 +32,7 @@ public class MomentFragment extends Fragment implements TabLayout.OnTabSelectedL
         tabLayout.addTab(tabLayout.newTab().setText("Popular"));
         getChildFragmentManager()
                 .beginTransaction()
-                .replace(R.id.frame, new FollowingFragment())
+                .replace(R.id.frame, new FollowingFragmentNew())
                 .commit();
         tabLayout.setOnTabSelectedListener(this);
         return v;
@@ -45,7 +45,8 @@ public class MomentFragment extends Fragment implements TabLayout.OnTabSelectedL
         switch (tab.getPosition()) {
 
             case 0:
-                fragment = new FollowingFragment();
+//                fragment = new FollowingFragment();
+                fragment = new FollowingFragmentNew();
                 getChildFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame, fragment)

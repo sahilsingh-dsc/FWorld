@@ -3,6 +3,7 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.example.fwprld"
         minSdkVersion 21
@@ -17,6 +18,11 @@ android {
             abiFilters "armeabi-v7a", "x86" // DO NOT MODIFY THIS LINE, IT'S UPDATED BY BUILD MACHINE AUTOMATICALLY.
         }
 
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     buildTypes {
         release {
@@ -75,5 +81,18 @@ dependencies {
         // workaround issue #73
         exclude group: 'com.google.android', module: 'android'
     }
+//    for broadcast streaming
+    implementation 'com.android.volley:volley:1.1.0'
+    implementation 'com.opentok.android:opentok-android-sdk:2.16.+'
+    implementation 'pub.devrel:easypermissions:0.4.0'
+    
+//         fb+ google plus
+    implementation 'com.facebook.android:facebook-android-sdk:4.7.0'
+    implementation 'com.google.android.gms:play-services-plus:8.4.0'
+    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
 
+//    for FCM Notification
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
 }

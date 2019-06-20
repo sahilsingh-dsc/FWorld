@@ -29,11 +29,12 @@ public class ChooseLanguageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_choose_language);
          ImageView imgEnglish = findViewById(R.id.imgEnglish);
-        mAuth = FirebaseAuth.getInstance();
+          mAuth = FirebaseAuth.getInstance();
          imgEnglish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseUser user = mAuth.getCurrentUser();
+
                 String authid = user.getUid();
                 langRef = FirebaseDatabase.getInstance().getReference();
                 langRef.child("USER_DATA").child(authid).child("selected_language").setValue("English");

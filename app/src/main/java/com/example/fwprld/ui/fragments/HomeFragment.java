@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterViewFlipper;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
@@ -26,6 +27,7 @@ import com.example.fwprld.adapters.MyCustomPager;
 import com.example.fwprld.adapters.RecommendAdapter;
 import com.example.fwprld.models.Recommend;
 import com.example.fwprld.openlive.ui.MainActivity;
+import com.example.fwprld.ui.broadcastStream.ActBroadcastMain;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,19 +37,19 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements TabLayout.OnTabSelectedListener{
 
     private AdapterViewFlipper adapterViewFlipper;
     private static final int[] IMAGES={R.drawable.slideimage,R.drawable.slideimage1,R.drawable.slideimage2,R.drawable.slideimage3};
     CardView talent,club;
     public TabLayout tabLayout;
     View view;
-    RecyclerView recyclerView;
-    List<Recommend> recommendList;
+
     private MyCustomPager adapter;
-    DatabaseReference homeFragRef;
+
 
     ImageView imgFLiveGIF, imgFTalentGIF, imgFClubGIF;
+    public static FrameLayout frameLayout;
 
     public HomeFragment() {
 
@@ -68,7 +70,8 @@ public class HomeFragment extends Fragment {
         imgFLiveGIF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), MainActivity.class));
+//                startActivity(new Intent(getContext(), MainActivity.class));
+                startActivity(new Intent(getContext(), ActBroadcastMain.class));
             }
         });
 
@@ -92,12 +95,13 @@ public class HomeFragment extends Fragment {
         adapter= new MyCustomPager(getContext(),IMAGES);
         adapterViewFlipper.setAdapter(adapter);
         adapterViewFlipper.setAutoStart(true);
-        recyclerView=(RecyclerView) view.findViewById(R.id.recycleView);
         tabLayout = (TabLayout)view.findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Recommended"));
         tabLayout.addTab(tabLayout.newTab().setText("Hot"));
         tabLayout.addTab(tabLayout.newTab().setText("Treding"));
         tabLayout.addTab(tabLayout.newTab().setText("New"));
+        frameLayout= (FrameLayout)view.findViewById(R.id.frame);
+        tabLayout.addOnTabSelectedListener(this);
         talent=(CardView)view.findViewById(R.id.talent);
         club=(CardView)view.findViewById(R.id.club);
         talent.setOnClickListener(new View.OnClickListener() {
@@ -127,41 +131,65 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
-
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recommendList = new ArrayList<>();
-        recommendList.clear();
-
-        homeFragRef = FirebaseDatabase.getInstance().getReference("VIEWTAB_DATA");
-        homeFragRef.child("RECOMMENDED_DATA").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                recommendList.clear();
-                for (DataSnapshot recSnap : dataSnapshot.getChildren()){
-
-                    String recommended_song_id = (String) recSnap.child("recommended_song_id").getValue();
-                    String recommended_song_image = (String) recSnap.child("recommended_song_image").getValue();
-                    String recommended_song_name = (String) recSnap.child("recommended_song_name").getValue();
-                    String recommended_song_singer = (String) recSnap.child("recommended_song_singer").getValue();
-                    String recommended_song_url = (String) recSnap.child("recommended_song_url").getValue();
-
-                    Recommend recommend = new Recommend(recommended_song_id, recommended_song_image ,recommended_song_name ,recommended_song_singer, recommended_song_url);
-                    recommendList.add(recommend);
-                }
-
-                RecommendAdapter adapter1 = new RecommendAdapter(getContext(), recommendList);
-                recyclerView.setAdapter(adapter1);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+       getChildFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frame, new RecommendedFragment())
+                .commit();
 
         return view;
     }
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        Fragment fragment = null;
+
+        switch (tab.getPosition()) {
+
+            case 0:
+                fragment = new RecommendedFragment();
+                getChildFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame, fragment)
+                        .commit();
+                break;
+
+            case 1:
+                fragment = new HotFragment();
+                getChildFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame, fragment)
+                        .commit();
+                break;
+            case 2:
+                fragment = new TredingFragment();
+                getChildFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame, fragment)
+                        .commit();
+                break;
+            case 3:
+              /*  fragment = new TredingFragment();
+                getChildFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame, fragment)
+                        .commit();*/
+                break;
+        }
+
+
+    }
+
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+
+    }
+
+
 
 }
+

@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.ActTopfun">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    android:padding="5dp"
+                    android:textColor="#000"
+                    android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+                    android:drawablePadding="20dp"
+                    android:text="Recharge "/>
+            </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="?android:attr/listDivider" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                >
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:gravity="center"
+                android:text="Recharge: "/>
+
+                <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textSize="16sp"
+                android:textColor="@color/recharge_color"
+                    android:layout_toRightOf="@+id/tv_title"
+                    android:gravity="center"
+                android:text="0 "
+
+                    />
+
+                <ImageView
+                android:id="@+id/iv_coin"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/cent"
+                android:layout_toRightOf="@+id/tv_amount"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="4dp"
+                    />
+                <ImageView
+                android:id="@+id/iv_refresh"
+                android:layout_width="17dp"
+                android:layout_height="20dp"
+                android:src="@drawable/rotating_left"
+                android:layout_toRightOf="@+id/iv_coin"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/ligh_gray"
+
+                >
+                <TextView
+                    android:id="@+id/tv_select_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:text="Select recharge amount: "/>
+
+
+                <ImageView
+                    android:id="@+id/iv_google_wallet_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="7dp"
+                    android:layout_toLeftOf="@+id/tv_google_wallet_txt"
+                    android:src="@drawable/google_wallet" />
+
+                <TextView
+                    android:id="@+id/tv_google_wallet_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="Google Wallet"
+                    android:layout_marginRight="10dp"
+
+                    />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_amount"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <ImageView
+                    android:id="@+id/iv_coin_icon_amount"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/cent" />
+
+                <TextView
+                    android:id="@+id/tv_recharge_title_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/recharge_first"
+                    android:layout_toRightOf="@+id/iv_coin_icon_amount"
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/tv_amount_txt_amount"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="@string/recharge_amount"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/custom_recharge_amount"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <RelativeLayout
+                android:id="@+id/rl_amount1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <ImageView
+                    android:id="@+id/iv_coin_icon_amount1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/cent" />
+
+                <TextView
+                    android:id="@+id/tv_recharge_title_amount1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/recharge_first1"
+                    android:layout_toRightOf="@+id/iv_coin_icon_amount1"
+                    />
+                <TextView
+                    android:id="@+id/tv_recharge_title_bonus1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@color/recharge_color"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/recharge_bonus1"
+                    android:layout_toRightOf="@+id/tv_recharge_title_amount1"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_amount_txt_amount1"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="@string/recharge_amount1"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/custom_recharge_amount"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <RelativeLayout
+                android:id="@+id/rl_amount2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <ImageView
+                    android:id="@+id/iv_coin_icon_amount2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/cent" />
+
+                <TextView
+                    android:id="@+id/tv_recharge_title_amount2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/recharge_first2"
+                    android:layout_toRightOf="@+id/iv_coin_icon_amount2"
+                    />
+                <TextView
+                    android:id="@+id/tv_recharge_title_bonus2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@color/recharge_color"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/recharge_bonus2"
+                    android:layout_toRightOf="@+id/tv_recharge_title_amount2"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_amount_txt_amount2"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="@string/recharge_amount2"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/custom_recharge_amount"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <RelativeLayout
+                android:id="@+id/rl_amount3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <ImageView
+                    android:id="@+id/iv_coin_icon_amount3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/cent" />
+
+                <TextView
+                    android:id="@+id/tv_recharge_title_amount3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/recharge_first3"
+                    android:layout_toRightOf="@+id/iv_coin_icon_amount3"
+                    />
+                <TextView
+                    android:id="@+id/tv_recharge_title_bonus3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@color/recharge_color"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/recharge_bonus3"
+                    android:layout_toRightOf="@+id/tv_recharge_title_amount3"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_amount_txt_amount3"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="@string/recharge_amount3"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/custom_recharge_amount"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <RelativeLayout
+                android:id="@+id/rl_amount4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <ImageView
+                    android:id="@+id/iv_coin_icon_amount4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/cent" />
+
+                <TextView
+                    android:id="@+id/tv_recharge_title_amount4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/recharge_first4"
+                    android:layout_toRightOf="@+id/iv_coin_icon_amount4"
+                    />
+                <TextView
+                    android:id="@+id/tv_recharge_title_bonus4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@color/recharge_color"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/recharge_bonus4"
+                    android:layout_toRightOf="@+id/tv_recharge_title_amount4"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_amount_txt_amount4"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="@string/recharge_amount4"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/custom_recharge_amount"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <RelativeLayout
+                android:id="@+id/rl_amount5"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <ImageView
+                    android:id="@+id/iv_coin_icon_amount5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/cent" />
+
+                <TextView
+                    android:id="@+id/tv_recharge_title_amount5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/recharge_first5"
+                    android:layout_toRightOf="@+id/iv_coin_icon_amount5"
+                    />
+                <TextView
+                    android:id="@+id/tv_recharge_title_bonus5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="14sp"
+                    android:textColor="@color/recharge_color"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="@string/recharge_bonus5"
+                    android:layout_toRightOf="@+id/tv_recharge_title_amount5"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_amount_txt_amount5"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="@string/recharge_amount5"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/custom_recharge_amount"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="150dp"
+              android:background="@drawable/banner1"
+              android:layout_marginTop="5dp"
+              >
+
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+        android:visibility="gone"
+        <RelativeLayout
+            android:id="@+id/rl_bottom_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rl_bottom"
+            android:background="@color/recharge_bottom_color"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+
+            >
+            <!-- android:visibility="gone"-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tv_continue"
+                >
+                <RelativeLayout
+                    android:id="@+id/rl_usr_pic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_launcher_icon"
+                        />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@+id/rl_usr_pic"
+                    android:layout_toLeftOf="@+id/ly_following"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:id="@+id/tv_coint_count"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="60 Coins"
+                        android:gravity="center_vertical"
+                        android:textColor="#000"
+                        android:paddingLeft="10dp"
+                        android:textSize="14dp"/>
+                    <TextView
+                        android:id="@+id/tv_comment"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/recharge_confirm"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray"
+                        android:paddingLeft="10dp"
+                        android:textSize="14dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textSize="20sp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/purpule"
+                        android:text="@string/rs"/>
+                    <TextView
+                        android:id="@+id/tv_amount_bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:text="60.00"
+
+
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_continue"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/recharge_bottom"
+                android:text="Continue"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textAllCaps="true"
+                >
+
+            </TextView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

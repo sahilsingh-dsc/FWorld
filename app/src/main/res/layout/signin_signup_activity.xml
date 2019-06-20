@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toprelative_id"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:id="@+id/fuzexlogotextrelative_id"
+            android:background="#013893">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="70dp"
+                android:id="@+id/fuzexlogotext_id"
+                android:src="@drawable/ic_launcher_icon"
+                android:layout_marginLeft="20dp"
+                />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_launcher_icon"
+                android:layout_toRightOf="@+id/fuzexlogotext_id"
+                android:layout_marginLeft="190dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All your information being confidential with us"
+                android:textColor="#fff"
+                android:textSize="16dp"
+                android:textAlignment="center"
+                android:layout_below="@+id/fuzexlogotext_id"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewrelative_id"
+            android:layout_below="@+id/fuzexlogotextrelative_id">
+
+            <View
+                android:layout_width="fill_parent"
+                android:id="@+id/view_id"
+                android:layout_height="2.5dp"
+                android:background="#db133d"
+                />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signinrelative_id"
+            android:gravity="center"
+            android:layout_below="@+id/viewrelative_id"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/signin_id"
+                android:text="SIGN IN"
+                android:textColor="#013893"
+                android:layout_marginTop="120dp"
+                android:textSize="19dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/signup_id"
+                android:text="SIGN UP"
+                android:textColor="#013893"
+                android:layout_marginTop="120dp"
+                android:paddingLeft="30dp"
+                android:layout_toRightOf="@+id/signin_id"
+                android:textSize="19dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/orview_id"
+            android:layout_below="@+id/signinrelative_id"
+            android:gravity="center"
+            android:layout_marginVertical="60dp"
+            >
+
+            <View
+                android:layout_width="140dp"
+                android:id="@+id/firstview_id"
+                android:layout_height="1dp"
+                android:background="#ebebeb"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/or_id"
+                android:text="OR"
+                android:layout_toRightOf="@+id/firstview_id"/>
+
+            <View
+                android:layout_width="140dp"
+                android:id="@+id/secondview_id"
+                android:layout_toRightOf="@+id/or_id"
+                android:layout_height="1dp"
+                android:background="#ebebeb"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llProfile"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+           android:layout_marginTop="330dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:id="@+id/imgProfilePic"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:layout_weight="2" >
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/txtEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/facebookgoogle_id"
+            android:layout_below="@+id/orview_id"
+            >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:id="@+id/facebook_id"
+                android:src="@drawable/facebook"
+                android:layout_marginHorizontal="80dp"/>
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:id="@+id/google_id"
+                android:src="@drawable/googleplus"
+                android:layout_toRightOf="@+id/facebook_id" />
+
+            <Button
+                android:id="@+id/btn_sign_out"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_logout_from_google"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btn_revoke_access"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_revoke_access"
+                android:layout_marginLeft="125dp"
+                android:layout_marginTop="80dp"
+                android:visibility="gone"
+                 />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/facebookgoogle_id"
+            android:layout_marginLeft="170dp"
+            android:layout_marginVertical="70dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/skiptext_id"
+                android:text="Skip"
+                android:textColor="#013896"
+                android:textSize="20dp"
+                />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

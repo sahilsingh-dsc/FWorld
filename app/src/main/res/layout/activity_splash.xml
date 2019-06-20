@@ -12,23 +12,26 @@
         android:gravity="center">
         <ImageView
             android:id="@+id/imagebounce"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/grownimggold"/>
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="-52dp"
+            android:src="@drawable/f_world_logo"/>
+       <!-- android:src="@drawable/grownimggold"-->
         <ImageView
             android:id="@+id/imgProfileAvatar"
             android:layout_width="250dp"
             android:layout_height="100dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="47dp"
             android:contentDescription="@string/todo"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/logopur"/>
+            app:srcCompat="@drawable/splash_logo"/>
+        <!--app:srcCompat="@drawable/splash_logo,logopur"-->
         <ImageView
             android:id="@+id/connect"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:src="@drawable/connectpeople"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="145dp"
             android:layout_marginLeft="100dp"/>
     </RelativeLayout>
 

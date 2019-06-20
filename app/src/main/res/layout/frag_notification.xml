@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.NotificationFragment"
+    android:orientation="vertical"
+    >
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cd"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:textColor="#000"
+                android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+                android:drawablePadding="20dp"
+                android:text="Notification"/>
+            <TextView
+                android:id="@+id/tv_sent_noti"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:layout_marginRight="20dp"
+                android:text="Send Notification"
+                android:textColor="@color/goldcolor"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    >
+
+    <TextView
+        android:id="@+id/tv_no_data"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:textColor="#000"
+        android:text="No data found"
+        android:visibility="gone"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_notification"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.fwprld.ui.broadcastStream.ActBroadcastMain"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_title"
+        android:background="#fff">
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="6sp"
+            android:padding="5dp"
+            android:textColor="#000"
+            android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+           android:gravity="center"
+            android:drawablePadding="20dp"
+            android:padding="10dp"
+            android:text="Streaming"
+            android:textColor="#000"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_below="@+id/rl_title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <FrameLayout
+            android:id="@+id/subscriber_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            />
+
+        <FrameLayout
+            android:id="@+id/publisher_container"
+            android:layout_width="@dimen/publisher_width"
+            android:layout_height="@dimen/publisher_height"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="@dimen/publisher_bottom_margin"
+            android:layout_marginEnd="@dimen/publisher_right_margin"
+            android:layout_marginRight="@dimen/publisher_end_margin"
+            android:padding="@dimen/publisher_padding"
+
+            android:background="@android:color/white" />
+        <!--android:visibility="gone"-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            tools:ignore="MissingConstraints"
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:layout_gravity="bottom|end"
+            >
+            <ListView
+                android:id="@+id/message_history_list_view"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/message_edit_text"
+                android:transcriptMode="alwaysScroll"
+                android:background="@null"
+                android:divider="@null"
+                />
+
+            <EditText
+                android:id="@+id/message_edit_text"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:hint="Message"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@android:color/darker_gray"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@drawable/chat_transparent"
+                />
+            <!--android:enabled="false"-->
+
+        </RelativeLayout>
+    </FrameLayout>
+
+
+
+</RelativeLayout>

@@ -33,7 +33,7 @@
             android:textSize="16sp" />
 
     </RelativeLayout>
-           <android.support.design.widget.TabLayout
+    <android.support.design.widget.TabLayout
             android:id="@+id/friendstabs_id"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -58,27 +58,35 @@
             android:src="@drawable/backimgpro"
             android:layout_marginLeft="10dp"
             />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/giftmessage_id"
-            android:text="Aakash invite you to join the collab Sagar Kinare Dil Ke Pukare "
-            android:textColor="#000"
-            android:layout_marginTop="10.00dp"
-            android:textSize="13dp"
-            android:layout_marginRight="100dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/txtSingSong"
+            android:layout_toRightOf="@+id/imgProfileAvatar"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/imgProfileAvatar"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/days_id"
-            android:layout_below="@+id/giftmessage_id"
-            android:text="4 days to go"
-            android:textSize="12dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="10dp"
-            />
+            android:layout_marginRight="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/giftmessage_id"
+                android:text="Aakash invite you to join the collab Sagar Kinare Dil Ke Pukare "
+                android:textColor="#000"
+                android:layout_marginTop="10.00dp"
+                android:textSize="13dp"
+             />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/days_id"
+                android:layout_below="@+id/giftmessage_id"
+                android:text="4 days to go"
+                android:textSize="12dp"
+                android:layout_marginTop="10dp"
+                />
+
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/txtSingSong"
             android:layout_width="60dp"
@@ -87,9 +95,9 @@
             android:text="Join"
             android:textColor="@color/purpule"
             android:background="@drawable/join_round"
-            android:layout_toRightOf="@+id/imgProfileAvatar"
-            android:layout_marginLeft="250dp"
+           android:layout_alignParentRight="true"
             android:layout_marginTop="19dp"
+            android:layout_marginRight="10dp"
             />
     </RelativeLayout>
 

@@ -10,11 +10,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.fwprld.R;
 import com.example.fwprld.adapters.FTalentAdapter;
+import com.example.fwprld.adapters.PopularAdpt;
 import com.example.fwprld.models.FTalent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +29,7 @@ import java.util.List;
 
 
 public class FollowingFragment extends Fragment {
+
     RecyclerView recyclerView;
     List<FTalent> ftalentList;
     android.widget.SearchView searchView;
@@ -35,19 +38,21 @@ public class FollowingFragment extends Fragment {
         // Required empty public constructor
     }
 
-
-
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_following, container, false);
         searchView= (android.widget.SearchView) v.findViewById(R.id.search);
+
+
         recyclerView=(RecyclerView)v.findViewById(R.id.recycleView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         ftalentList = new ArrayList<>();
+
+
+
 
         DatabaseReference ftalentRef = FirebaseDatabase.getInstance().getReference("FTALENT_DATA");
         ftalentRef.child("FTALENT_SONGS_DATA").addValueEventListener(new ValueEventListener() {
@@ -74,6 +79,7 @@ public class FollowingFragment extends Fragment {
 
                 FTalentAdapter adapter = new FTalentAdapter(getContext(),  ftalentList);
                 recyclerView.setAdapter(adapter);
+
 
             }
 

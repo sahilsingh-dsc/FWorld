@@ -12,21 +12,41 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
 
+    <!--for broadcast streaming-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--<uses-feature android:name="android.hardware.camera" />-->
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!--for g+-->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
 
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
-
+    <!--for broadcast streaming-->
+   <!-- <uses-sdk android:minSdkVersion="21"
+        android:targetSdkVersion="28" />-->
+    <!--for broadcast streaming-->
     <application
         android:name=".openlive.AGApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher_icon"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--android:roundIcon="@mipmap/ic_launcher_round"-->
+        <activity android:name=".ui.broadcastStream.ActBroadcastMain"/>
         <activity android:name=".ui.activities.SoloVideoActivity"/>
         <activity android:name=".ui.activities.GiftActivity" />
         <activity android:name=".ui.activities.CommentsActivity" />
@@ -49,6 +69,24 @@
         <activity android:name=".ui.activities.Camera2VideoImageActivity" />
         <activity android:name=".openlive.ui.MainActivity" />
         <activity android:name=".openlive.ui.LiveRoomActivity" />
+
+        <activity android:name=".ui.activities.ActGallery" />
+        <activity android:name=".ui.activities.ActStatus" />
+        <activity android:name=".ui.activities.ActTopfun" />
+        <activity android:name=".ui.activities.ActContribute" />
+        <activity android:name=".ui.activities.ActPhotoVideo" />
+        <activity android:name=".ui.activities.ActTextStory" />
+        <activity android:name=".ui.activities.ActPostedFreeStyle" />
+        <activity android:name=".ui.activities.ActPostedVideos" />
+        <activity android:name=".ui.activities.ActDuetProfile" />
+        <activity android:name=".ui.activities.ActCountryList" />
+        <activity android:name=".ui.activities.ActVIP" />
+        <activity android:name=".ui.activities.ActLanguageList" />
+        <activity android:name=".ui.activities.ActNoble" />
+        <activity android:name=".ui.activities.ActRecharge" />
+        <activity android:name=".ui.activities.ActDraft" />
+        <activity android:name=".ui.activities.ActFollowers" />
+        <activity android:name=".ui.activities.ActFollowings" />
         <activity
             android:name=".ui.activities.ChooseLanguageActivity"
             android:screenOrientation="portrait" />
@@ -56,15 +94,74 @@
             android:name=".ui.activities.CreateFreeStyleActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name=".ui.activities.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.activities.ViewPagerDemo"
+            android:screenOrientation="portrait">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".ui.activities.DemoLogin"
+            android:screenOrientation="portrait">
+           <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".ui.activities.SigninSignupActivity"
+            android:screenOrientation="portrait">
+           <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".ui.activities.DemoGLogin"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.activities.ActPopDetail"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".ui.activities.MainActivity"/>
+
+        <!--AIzaSyAlXBHMYN1ePbJXdTvlAx9XKeZgaT7jBW4-->
+
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+
+        <provider
+            android:authorities="com.facebook.app.FacebookContentProvider507892419746592"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service android:name=".ui.activities.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

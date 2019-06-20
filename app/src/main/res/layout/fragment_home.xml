@@ -170,13 +170,12 @@
             android:layout_width="match_parent"
             android:layout_height="0.8dp"
             android:background="@color/shadow" />
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycleView"
+        <FrameLayout
+            android:id="@+id/frame"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_height="wrap_content">
+        </FrameLayout>
 
-        </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
 

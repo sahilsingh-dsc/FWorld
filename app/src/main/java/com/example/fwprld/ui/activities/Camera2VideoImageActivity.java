@@ -27,6 +27,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.SystemClock;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,6 +42,18 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.example.fwprld.R;
+import com.example.fwprld.adapters.TopStarAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -52,6 +65,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 public class Camera2VideoImageActivity extends AppCompatActivity {
 
@@ -64,6 +78,14 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
     String cam = "front";
     String cameraId;
     CameraManager cameraManager;
+
+
+    StorageReference avatarStoreRef;
+    final int min = 20;
+    final int max = 80;
+
+  /*  FirebaseUser firebaseUser;
+    String fid;*/
 
     private static final int REQUEST_CAMERA_PERMISSION_RESULT = 0;
     private static final int REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION_RESULT = 1;
@@ -279,7 +301,9 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera2_video_image);
+       /* firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
+        fid = firebaseUser.getUid();*/
         createVideoFolder();
         createImageFolder();
 
@@ -325,6 +349,10 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
                     Intent mediaStoreUpdateIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
                     mediaStoreUpdateIntent.setData(Uri.fromFile(new File(mVideoFileName)));
                     sendBroadcast(mediaStoreUpdateIntent);
+
+                    //TODO: save the video in the db
+                    uploadData(Uri.fromFile(new File(mVideoFileName)));
+                   // uploadImage();
 
                 } else {
                     mIsRecording = true;
@@ -595,6 +623,7 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
 
                                 mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                                 try {
+                                    Toast.makeText(Camera2VideoImageActivity.this, ""+song_url, Toast.LENGTH_SHORT).show();
                                     mediaPlayer.setDataSource(song_url);
                                     mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                                         @Override
@@ -756,6 +785,7 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
         String prepend = "VIDEO_" + timestamp + "_";
         File videoFile = File.createTempFile(prepend, ".mp4", mVideoFolder);
         mVideoFileName = videoFile.getAbsolutePath();
+
         return videoFile;
     }
 
@@ -849,4 +879,76 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-}
+
+
+
+
+
+    private void uploadData(Uri videoUri) {
+        if(videoUri != null){
+            final int random = new Random().nextInt((max - min) + 1) + min;
+            String userUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            avatarStoreRef = FirebaseStorage.getInstance().getReference("MY_VIDEO").child("/"+userUid+"/"+random );
+            //avatarStoreRef = storageRef.child("/videos/" + userUid );
+            UploadTask uploadTask = avatarStoreRef.putFile(videoUri);
+
+            uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                    if(task.isSuccessful())
+                        Toast.makeText(Camera2VideoImageActivity.this, "Upload Video successful", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    /// loadingDialog.dismiss();
+                    Log.e(TAG, "error"+e.toString() );
+                    //Toast.makeText(Camera2VideoImageActivity.this, "Upload Failed" + e.toString(), Toast.LENGTH_LONG).show();
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                    Toast.makeText(Camera2VideoImageActivity.this, ""+taskSnapshot, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }else {
+            Toast.makeText(getApplicationContext(), "Nothing to upload", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+
+
+
+
+    /*private void uploadImage() {
+
+        *//*if(avatarPath != null) {*//*
+
+            String filename = "10001.mp4";
+            avatarStoreRef = FirebaseStorage.getInstance().getReference("MY_VIDEO").child("/videos/" + fid + "/" + filename);
+            UploadTask uploadTask = avatarStoreRef.putFile(Uri.parse(mVideoFileName));
+            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    //loadingDialog.dismiss();
+                    Toast.makeText(Camera2VideoImageActivity.this, "Upload Video successful", Toast.LENGTH_SHORT).show();
+
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                   /// loadingDialog.dismiss();
+                    Log.e(TAG, "error"+e.toString() );
+                    Toast.makeText(Camera2VideoImageActivity.this, "Upload Failed" + e, Toast.LENGTH_LONG).show();
+                }
+            });
+        }*/
+      /*  else {
+            Toast.makeText(Camera2VideoImageActivity.this, "Select Avatar", Toast.LENGTH_SHORT).show();
+        }*/
+
+    }
+
+

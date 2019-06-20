@@ -41,28 +41,50 @@
         android:layout_below="@+id/btnsub"/>
     <LinearLayout
         android:id="@+id/loginly"
-        android:visibility="gone"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/more"
         android:layout_marginTop="20dp"
         android:layout_marginRight="60dp"
         android:layout_marginLeft="60dp"
-        android:weightSum="3">
+        android:visibility="gone"
+        android:weightSum="4">
+        <!--android:visibility="gone"-->
         <ImageView
+            android:id="@+id/iv_fab"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
+            android:paddingLeft="10dp"
             android:src="@drawable/facebook"/>
         <ImageView
+            android:id="@+id/iv_gplus"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
+            android:paddingLeft="10dp"
+
             android:src="@drawable/googleplus"/>
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/btn_sign_in"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:paddingLeft="20dp"
+
+           />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/instagram"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
+            android:paddingLeft="10dp"
             android:src="@drawable/mail"/>
 
     </LinearLayout>

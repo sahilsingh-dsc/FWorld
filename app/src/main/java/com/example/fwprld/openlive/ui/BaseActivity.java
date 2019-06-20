@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
@@ -26,12 +27,12 @@ import com.example.fwprld.openlive.model.MyEngineEventHandler;
 import com.example.fwprld.openlive.model.WorkerThread;
 import io.agora.rtc.IRtcEngineEventHandler;
 import io.agora.rtc.RtcEngine;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import java.util.Arrays;
 
 public abstract class BaseActivity extends AppCompatActivity implements AGEventHandler {
-    private final static Logger log = LoggerFactory.getLogger(BaseActivity.class);
+//    private final static Logger log = LoggerFactory.getLogger(BaseActivity.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,14 +109,16 @@ public abstract class BaseActivity extends AppCompatActivity implements AGEventH
                 public void run() {
                     InputMethodManager mgr = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                     boolean result = mgr.showSoftInput(v, InputMethodManager.SHOW_FORCED);
-                    log.debug("openIME " + focus + " " + result);
+//                    log.debug("openIME " + focus + " " + result);
+                    Log.e("","openIME " + focus + " " + result);
                 }
             });
         }
     }
 
     public boolean checkSelfPermission(String permission, int requestCode) {
-        log.debug("checkSelfPermission " + permission + " " + requestCode);
+//        log.debug("checkSelfPermission " + permission + " " + requestCode);
+        Log.e("","checkSelfPermission " + permission + " " + requestCode);
         if (ContextCompat.checkSelfPermission(this,
                 permission)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -164,7 +167,8 @@ public abstract class BaseActivity extends AppCompatActivity implements AGEventH
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String permissions[], @NonNull int[] grantResults) {
-        log.debug("onRequestPermissionsResult " + requestCode + " " + Arrays.toString(permissions) + " " + Arrays.toString(grantResults));
+//        log.debug("onRequestPermissionsResult " + requestCode + " " + Arrays.toString(permissions) + " " + Arrays.toString(grantResults));
+        Log.e("","onRequestPermissionsResult " + requestCode + " " + Arrays.toString(permissions) + " " + Arrays.toString(grantResults));
         switch (requestCode) {
             case ConstantApp.PERMISSION_REQ_ID_RECORD_AUDIO: {
                 if (grantResults.length > 0

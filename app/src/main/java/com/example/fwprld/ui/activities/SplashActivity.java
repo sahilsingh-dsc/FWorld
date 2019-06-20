@@ -3,6 +3,7 @@ package com.example.fwprld.ui.activities;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,9 +39,29 @@ public class SplashActivity extends AppCompatActivity {
         connect.startAnimation(animBounce1);
         bounceImage.startAnimation(animBounce);
 
-        Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
-        startActivity(mainIntent);
-        finish();
+//        Intent mainIntent = new Intent(SplashActivity.this, ChooseLanguageActivity.class);
+//        Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+//        startActivity(mainIntent);
+//        finish();
+        Navigate();
 
+    }
+    public void Navigate()
+    {
+        new Handler().postDelayed(new Runnable() {
+
+// Using handler with postDelayed called runnable run method
+
+            @Override
+
+            public void run() {
+
+                Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+                startActivity(mainIntent);
+                finish();
+
+            }
+
+        }, 3*1000);
     }
 }

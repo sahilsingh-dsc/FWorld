@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/career_dailog_bg"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@android:color/white"
+        >
+    <TextView
+        android:id="@+id/txtEdu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+        android:text="Career"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSaveCareer"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+      android:layout_alignParentRight="true"
+        android:text="SAVE"
+        android:textSize="18sp"
+        android:textColor="@color/goldcolor"
+        android:paddingRight="10dp"
+        android:gravity="center"
+         />
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/etposition"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="Enter your position"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        android:textSize="12sp"
+        android:layout_marginTop="2dp"
+        />
+
+    <EditText
+        android:id="@+id/etcompanyname"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="Enter company name"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        android:textSize="12sp"
+         />
+
+    <TextView
+        android:id="@+id/txt_join_date"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:hint="Tell us when you join"
+        android:paddingLeft="15dp"
+        android:textSize="12sp"
+       />
+
+    <TextView
+        android:id="@+id/txt_leave_date"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:hint="Tell us when you leave"
+        android:paddingLeft="15dp"
+        android:textSize="12sp"
+       />
+
+
+
+
+
+</LinearLayout>
+</android.support.constraint.ConstraintLayout>
